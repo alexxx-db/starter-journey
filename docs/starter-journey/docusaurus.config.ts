@@ -14,6 +14,7 @@ const config: Config = {
   trailingSlash: true,
 
   // GitHub pages deployment config.
+  // let's try a push
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'databricks-solutions', // Usually your GitHub org/user name.
   projectName: 'starter-journey', // Usually your repo name.
