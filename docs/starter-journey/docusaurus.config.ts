@@ -12,12 +12,12 @@ const config: Config = {
   url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/starter-journey/',
+  baseUrl: '/',
   trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'ivancalvo-dbxs', // Usually your GitHub org/user name.
+  organizationName: 'databricks-solutions', // Usually your GitHub org/user name.
   projectName: 'starter-journey', // Usually your repo name.
   deploymentBranch: 'github-pages',
 
