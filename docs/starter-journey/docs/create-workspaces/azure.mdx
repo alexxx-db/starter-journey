@@ -1,0 +1,52 @@
+---
+sidebar_position: 1
+---
+
+# Azure
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+Follow the **manual** ☑️ or **Terraform** ✅ approach to deploy the workspaces.
+
+## Manual deployment
+
+:::info Plan
+- Follow one of the listed videos to deploy the first workspace (**development workspace**).
+- Take in consideration the subscription and resource group where it's supposed to be deployed.
+  - i.e dev workspace on the dev subscription and dev databricks resource group.
+- Repeat for staging and production workspaces. 
+:::
+
+#### Youtube Tutorials
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/n4WUL9X5tgw"
+></iframe>
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/tI6Pvjuo1RM"
+></iframe>
+
+## Terraform deployment 🔥
+
+### Save time and clicks with Terraform (🔥)
+
+* [Github | Azure VNet injection Workspace Setup Guide (with VNet deployment)
+](https://github.com/databricks-solutions/technical-services-solutions/tree/main/workspace-setup/terraform-examples/azure/azure-vnet-injection)
+* Follow the **README.md**.
+* Use the **tf/terraform.tfvars.example** file as a reference!
+* Repeat for staging and production.
+
+:::info Tip #1: Workspace name for environment isolation.
+- Example #1: creating the first workspace (development).
+  - **workspace_name** can be **dev** or **development**.
+  - **workspace_name** can also include a prefix for a businesss unit.
+    - i.e **finance_dev** or **finance_development**
+
+**Note:** Apply the same idea to the **resource group** name.
+:::
+

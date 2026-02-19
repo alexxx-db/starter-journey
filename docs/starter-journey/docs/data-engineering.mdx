@@ -1,0 +1,151 @@
+---
+sidebar_position: 8
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Admonition from '@theme/Admonition';
+
+# 8. Data Engineering
+
+## Journey progress
+
+- [x] ~~Identify your organization cloud tenant(s).~~
+- [x] ~~Create the workspace(s).~~
+- [X] ~~Post-deployment configurations.~~
+- [X] ~~Governance Strategy on Unity Catalog.~~
+- [X] ~~Access your data from Unity Catalog.~~
+- [ ] **Create the first pipeline.**
+- [ ] Query and explore data from a DBSQL Warehouse.
+- [ ] Create the first visualization using Dashboards and Genie.
+
+## Target
+
+* Introduce two Databricks products for Data Engineering: 
+  * Spark Declarative Pipelines (formerly known as Lakeflow Pipelines or DLT)
+  * Lakeflow Jobs.
+* Build the first pipeline.
+* Build the first job.
+
+## Outcome
+
+* Create the first pipeline using Spark Declarative Pipelines.
+* Create the first orchestration job using Lakeflow Jobs.
+
+## Data Engineering on Databricks
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/n8XWOr6zIPo"
+></iframe>
+
+## Build the first data pipeline
+
+### Spark Declarative Pipelines (SDP)
+
+* Supports SQL or Python.
+* **Process multiple sources simultaneously** whether streaming from Kafka, batch loading from cloud storage, or querying external databases.
+* **Built-in incremental processing** intelligently tracks changes and processes only new or modified data, dramatically reducing compute costs and pipeline runtimes.
+* **Data quality is enforced through declarative expectations** that you define inline with your transformations.
+* Integrated with **Unity Catalog** (everything on Databricks is Unity Catalog).
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/bsPBdKnZkr0"
+></iframe>
+
+### SDP in action!
+
+Install and run one of the following demos:
+
+1. [Introduction to Lakeflow Spark Declarative Pipeline - Bike](https://www.databricks.com/resources/demos/tutorials/lakehouse-platform/lakeflow-declarative-pipeline)
+2. [CDC Pipeline With Lakeflow Spark Declarative Pipeline](https://www.databricks.com/resources/demos/tutorials/lakehouse-platform/cdc-pipeline-with-delta-live-table?itm_data=demo_center).
+
+:::info When installing, specify the catalog name
+```python
+import dbdemos
+
+catalog_name = "dev"
+demo_name = "pipeline-bike"
+#demo_name = "declarative-pipeline-cdc"
+
+dbdemos.install(demo_name, catalog = catalog_name)
+```
+:::
+
+
+### References for SDP development
+
+* Use the previous demo as a reference for your first pipeline.
+* In addition, get familiar with the following resources:
+
+#### SDP Features
+
+* [Load data in pipelines](https://docs.databricks.com/aws/en/ldp/load).
+    * Data in cloud object storage is processed using [AutoLoader](https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/).
+* [Load and process data incrementally with Lakeflow Spark Declarative Pipelines flows
+](https://docs.databricks.com/aws/en/ldp/flows).
+* [Transform data with pipelines
+](https://docs.databricks.com/aws/en/ldp/transform).
+* [Manage data quality with pipeline expectations
+](https://docs.databricks.com/aws/en/ldp/expectations).
+
+#### Python 
+* [Develop SDP with Python
+](https://docs.databricks.com/aws/en/ldp/developer/python-dev).
+* [SDP Python language reference
+](https://docs.databricks.com/aws/en/ldp/developer/python-ref).
+    
+#### SQL
+    * [Develop SDP with SQL](https://docs.databricks.com/aws/en/ldp/developer/sql-dev).
+    * [SDP SQL language reference](https://docs.databricks.com/aws/en/ldp/developer/sql-ref).
+
+#### Tutorials and code examples
+
+* [Tutorial: Build an ETL pipeline with Lakeflow Spark Declarative Pipelines
+](https://docs.databricks.com/aws/en/getting-started/data-pipeline-get-started#step-2-develop-your-pipeline-logic).
+* [Sample pipeline notebook](https://github.com/ivancalvo-dbxs/medallion-pipeline-dabs/blob/main/src/pipeline_notebook.ipynb).
+    * [Youtube walkthrough of the repo and project](https://www.youtube.com/watch?v=W8ucHwzwdhc).
+    * Focus and use the notebook as a development reference, ignore the repo and other files.
+    * **Solid refence that shows how to build a Medallion Architecture on SDP**.
+
+### My SDP is running smoothly now, what's next?
+
+* Schedule the pipeline execution (and other tasks if required) with Lakeflow Jobs.
+
+## Build the first orchestration job.
+
+### Lakeflow Jobs
+
+On Databricks, everything related to:
+* Orchestration.
+* Tasks, DAGs and dependencies. 
+* Schedule of execution and triggers.
+* Retries and notifications (success, failures).
+
+Should be configured as a [Lakeflow Job (AKA Databricks Jobs)](https://docs.databricks.com/aws/en/jobs). 
+
+### Jobs in action!
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/BUFDNFA_AgA"
+></iframe>
+
+:::info Databricks Workflows 
+* Databricks Jobs (previously known as Databricks Workflows).
+* If you read **Workflow** just remember that it is refering to a **Job**.
+:::
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/0TOrtVEYeV8"
+></iframe>
+
+### Create the first Job
+
+* [Create your first Lakeflow Job
+](https://docs.databricks.com/aws/en/jobs/jobs-quickstart)
+    * The pipeline created on the previous step should be orchestrated from a Job.

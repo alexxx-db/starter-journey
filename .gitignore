@@ -1,5 +1,24 @@
-*conf*.json
+# Dependencies
+docs/starter-journey/node_modules
+
+# Production
+docs/starter-journey/build
+
+# Generated files
+docs/starter-journey/.docusaurus
+docs/starter-journey/.cache-loader
+
+# Misc
 .DS_Store
-__pycache__
-.idea/
-.env
+docs/.DS_Store
+docs/starter-jouryney/static/.DS_Store
+docs/starter-jouryney/static/img/.DS_Store
+
+docs/starter-journey/.env.local
+docs/starter-journey/.env.development.local
+docs/starter-journey/.env.test.local
+docs/starter-journey/.env.production.local
+
+docs/starter-journey/npm-debug.log*
+docs/starter-journey/yarn-debug.log*
+docs/starter-journey/yarn-error.log*

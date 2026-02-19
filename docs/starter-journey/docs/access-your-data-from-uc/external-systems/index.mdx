@@ -1,0 +1,89 @@
+---
+sidebar_position: 1
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Admonition from '@theme/Admonition';
+
+# External databases or warehouses
+
+## Create UC connection
+
+A UC connection can be created to accomplish two different tasks:
+1. Create a foregin catalog to push-down queries from Databricks.
+2. Create a managed ingestion pipeline into Unity Catalog using **Lakeflow Connect**.
+
+### Youtube tutorial
+<br />
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/_2AkgukfB8Q"
+></iframe>
+
+
+
+### Step-by-step tutorial
+
+
+
+1. Navigate to the Databricks workspace
+2. In the left sidebar, click on "Catalog" and then click on "External Data" 
+
+<div style={{textAlign: 'left'}}>
+  <img src={useBaseUrl('/img/aws/aws_external_data_buttom.png')} 
+  alt="external data buttom"
+  style={{width: '80%', height: 'auto'}}
+  />
+</div>
+<br />
+
+3. Click on "Connections"
+<div style={{textAlign: 'left'}}>
+  <img src={useBaseUrl('/img/aws/addconnectionbuttom.png')} 
+  alt="external data buttom"
+  style={{width: '80%', height: 'auto'}}
+  />
+</div>
+<br />
+
+
+4. **Configure your connection:**
+   - **Connection name**: Enter a descriptive name for your data source connection
+   - **Connection type**: Select the appropriate connector for your external system (e.g., PostgreSQL, MySQL, SQL Server, Snowflake, etc.)
+   
+   <Admonition type="tip" title="Available Connection Types">
+     For a complete list of supported connectors, see the [Databricks Lakehouse Federation documentation](https://docs.databricks.com/aws/en/query-federation/).
+   </Admonition>
+
+5. **Configure network connectivity:**
+   - Ensure your external data source is reachable from Databricks
+   - Configure appropriate security groups, VPC settings, or firewall rules
+   - For on-premises systems, you may need VPN or dedicated network connections
+   
+6. **Test and create the connection:**
+   - Click **Test Connection** to verify connectivity
+   - Once successful, click **Create** to save your external data connection
+
+<Admonition type="info" title="Next Steps">
+  Use the connection to create a UC foreign catalog to query and process external data.
+</Admonition>
+
+## Create an UC Foreign catalog
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/fjxjK-jvRng"
+></iframe>
+
+
+## Create an ingestion pipeline
+* More on [Databricks Lakeflow Connect Documentation](https://docs.databricks.com/aws/en/ingestion/overview).
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/g1srOFsD59I"
+></iframe>
+

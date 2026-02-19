@@ -1,0 +1,78 @@
+---
+sidebar_position: 4
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Admonition from '@theme/Admonition';
+
+# Create Workspaces
+
+An extended explanation can be found in: **[Functional Workspace Organization on Databricks
+](https://www.databricks.com/blog/2022/03/10/functional-workspace-organization-on-databricks.html)**
+
+## Journey progress
+
+- [x] ~~Identify your organization cloud tenant(s).~~
+- [ ] **Create the workspace(s).**
+- [ ] Post-deployment configurations.
+- [ ] Governance Strategy on Unity Catalog.
+- [ ] Access your data from Unity Catalog.
+- [ ] Create the first pipeline.
+- [ ] Query and explore data from a DBSQL Warehouse.
+- [ ] Create the first visualization using Dashboards and Genie.
+
+## Target
+
+* This section shows how to create the first Databricks Workspace (development) on the previously identified cloud tenant.
+* Repeat the Terraform or manual method for the next workspaces (staging, uat, qa, prod, etc...).
+
+<img src={useBaseUrl('/img/workspace-target.jpg')} alt="description"/>
+
+## Outcome
+
+* Databricks Workspace (development workspace).
+* UC catalog (development catalog).
+* Cloud infra.
+
+## Three workspaces: Best practice and industry standard.
+
+:::tip Recommended number of workspaces
+
+- **Three workspaces.**
+- **Aligned with the SDLC (dev, staging, uat, production).**
+    - Staging is often named as QA or testing depending on the organization context.
+    - ***Treat your data and AI as you treat your code.***
+
+:::
+
+![Workspace Deployment](/img/workspace-three.jpg)
+
+
+## Three workspaces per business unit or department
+
+If three workspaces is not enought to separate your organization teams and business units do the following:
+
+:::info Business unit and teams separation. 
+
+- Keep the three workspaces idea.
+- Add the (business unit | line of business | team name) as a prefix to the workspace names.
+- For each (business unit | line of business | team name): create a dev - staging - prod workspace.
+
+:::
+
+![Workspace Deployment](/img/workspace-lob.png)
+
+
+## A single workspace to manage everything
+
+:::danger One place for all the jobs, pipelines, dashboards and AI models in a organization.
+- Dev, Staging and Prod workloads on a single workspace is highly prone to errors.
+- All users and automations service principals working and deploying on a single environment.
+- ***This is the GIT equivalent of working only on the main branch.***
+- ***Treat your data and AI as you treat your code.***
+:::
+
+## Deploy the workspaces
+
+- [**AWS Setup Guide**](./aws.mdx).
+- [**Azure Setup Guide**](./azure.mdx).
+- [**GCP Setup Guide**](./gcp.mdx).

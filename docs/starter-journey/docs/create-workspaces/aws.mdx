@@ -1,0 +1,78 @@
+---
+sidebar_position: 2
+---
+
+# AWS
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+Follow the **manual** ☑️ or **Terraform** ✅ approach to deploy the workspaces.
+
+## Databricks Account
+
+If you don't have a Databricks account yet, do the steps listed on the official documentation:
+
+:::note Create a Databricks Account
+* [**(Databricks documentation) Create your Databricks account**](https://docs.databricks.com/aws/en/getting-started/cloud-setup#create-your-databricks-account)
+
+:::info Outputs
+* If you follow the process right, you'll end with a serverless workspace named ***workspace***.
+* This guide recommends a [**classic workspace**](https://docs.databricks.com/aws/en/admin/workspace/#when-to-choose-classic-workspaces) instead.
+:::
+
+## Manual workspace creation ☑️
+
+:::note Workspace creation
+
+* Follow the instructions to below to provide a new workspace.
+* **Create the development workspace first**.
+  * Repeat for staging and production.
+
+:::success Guide
+* <a target="_blank" href={useBaseUrl('/pdfs/AWS-Automated-Configuration-Classic-Workspace-Deployment.pdf')}>**View PDF - AWS Automated Configuration Classic Workspace Deployment**</a>
+:::
+
+
+
+## Terraform deployment 🔥
+
+### Save time and clicks with Terraform (🔥)
+
+* [Github | Databricks on AWS with Customer-Managed VPC (BYOVPC)](https://github.com/databricks-solutions/technical-services-solutions/tree/main/workspace-setup/terraform-examples/aws/aws-byovpc)
+* Follow the **README.md**.
+* Use the **tf/terraform.tfvars.example** file as a reference!
+  * Repeat for staging and production.
+
+:::info Tip #1: Environment isolation.
+- Use the prefix to apply the environment isolation.
+  - Example #1: creating the first workspace (development).
+    - prefix can be **dev** or **development**.
+    - prefix can also have the businesss unit name.
+      - i.e **finance_dev** or **finance_dev**
+:::
+
+:::info Tip #2: Networking configuration.
+- Option #1 to create a new VPC (recommended, a Databricks VPC per tenant).
+- Option #2 to use an existing VPC.
+:::
+
+:::info Tip #3: Metastore.
+- Option #1 if there are no metastores on the Account Console.
+- Option #2 if there is a metastore in the region  already.
+:::
+
+:::info Tip #4: Terraform deployment example
+
+Different template, same execution.
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/t5vyL1RKXUE"
+  title="YouTube video player"
+></iframe>
+:::
+
+
+
+

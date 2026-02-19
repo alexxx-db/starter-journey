@@ -1,0 +1,43 @@
+---
+sidebar_position: 7
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Admonition from '@theme/Admonition';
+
+# Access your data from Unity Catalog
+
+## Journey progress
+
+- [x] ~~Identify your organization cloud tenant(s).~~
+- [x] ~~Create the workspace(s).~~
+- [X] ~~Post-deployment configurations.~~
+- [X] ~~Governance Strategy on Unity Catalog.~~
+- [ ] **Access your data from Unity Catalog.**
+- [ ] Create the first pipeline.
+- [ ] Query and explore data from a DBSQL Warehouse.
+- [ ] Create the first visualization using Dashboards and Genie.
+
+## Target
+
+* Access target data sources from Databricks UC.
+
+## Outcome
+
+* Allows Data Engineering pipelines creation.
+* Governance from Unity Catalog.
+
+## Access the data from UC
+
+If the first pipeline target data source is one of the following:
+    - Build an ETL/ELT pipeline on data that sits on your cloud data lake like S3 - ADLS - GCS.
+    - Process unstructured datasets for computer vision (images - videos) or text-related GenAI agents (PDFs):
+
+Then, proceed to: [**Cloud object storage**](./cloud-object-storage/index.mdx).
+
+Else, if the plan is to run one of the following actions to an external system or warehouse from Databricks:
+    - Build a managed ingestion pipeline.
+    - Push-down queries.
+    
+Then, follow this section: [**External databases or warehouses**](./external-systems/index.mdx).
+
+![Unity Catalog and Federation](/img/uc-and-federation.png)
