@@ -10,9 +10,7 @@ const config: Config = {
   favicon: 'img/icon.ico',
 
   url: 'https://github.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'s
-  baseUrl: '/',
+  baseUrl: '/starter-journey/',
   trailingSlash: true,
 
   // GitHub pages deployment config.
