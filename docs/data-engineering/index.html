@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-data-engineering" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">8. Data Engineering | Starter Journey</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://github.com/docs/data-engineering/"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="8. Data Engineering | Starter Journey"><meta data-rh="true" name="description" content="Journey progress"><meta data-rh="true" property="og:description" content="Journey progress"><link data-rh="true" rel="icon" href="/img/icon.ico"><link data-rh="true" rel="canonical" href="https://github.com/docs/data-engineering/"><link data-rh="true" rel="alternate" href="https://github.com/docs/data-engineering/" hreflang="en"><link data-rh="true" rel="alternate" href="https://github.com/docs/data-engineering/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"8. Data Engineering","item":"https://github.com/docs/data-engineering"}]}</script><link rel="stylesheet" href="/assets/css/styles.3ecac816.css">
+<script src="/assets/js/runtime~main.0c36915a.js" defer="defer"></script>
+<script src="/assets/js/main.c4771b42.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","light"),document.documentElement.setAttribute("data-theme-choice","light"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/databricks.ico"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/databricks.ico" alt="Databricks Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/databricks.ico" alt="Databricks Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Starter Journey</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/databricks-solutions/starter-journey" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link header-github-link" aria-label="GitHub repository"></a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/get-started/"><span title="1. Get Started" class="linkLabel_WmDU">1. Get Started</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/foundations/"><span title="2. Foundations" class="categoryLinkLabel_W154">2. Foundations</span></a><button aria-label="Expand sidebar category &#x27;2. Foundations&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/cloud-tenants/"><span title="3. Cloud tenant(s)" class="linkLabel_WmDU">3. Cloud tenant(s)</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/create-workspaces/"><span title="4. Create workspaces" class="categoryLinkLabel_W154">4. Create workspaces</span></a><button aria-label="Expand sidebar category &#x27;4. Create workspaces&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/post-deployment/"><span title="5. Post-deployment configurations" class="linkLabel_WmDU">5. Post-deployment configurations</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/uc-governance-strategy/"><span title="6. Governance Strategy on Unity Catalog" class="linkLabel_WmDU">6. Governance Strategy on Unity Catalog</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/access-your-data-from-uc/"><span title="7. Access your data from Unity Catalog" class="categoryLinkLabel_W154">7. Access your data from Unity Catalog</span></a><button aria-label="Expand sidebar category &#x27;7. Access your data from Unity Catalog&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/data-engineering/"><span title="8. Data Engineering" class="linkLabel_WmDU">8. Data Engineering</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/data-warehouse/"><span title="9. Data Warehouse" class="linkLabel_WmDU">9. Data Warehouse</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/aibi/"><span title="10. AI/BI" class="linkLabel_WmDU">10. AI/BI</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">8. Data Engineering</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>8. Data Engineering</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="journey-progress">Journey progress<a href="#journey-progress" class="hash-link" aria-label="Direct link to Journey progress" title="Direct link to Journey progress" translate="no">​</a></h2>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <del>Identify your organization cloud tenant(s).</del></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <del>Create the workspace(s).</del></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <del>Post-deployment configurations.</del></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <del>Governance Strategy on Unity Catalog.</del></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <del>Access your data from Unity Catalog.</del></li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <strong>Create the first pipeline.</strong></li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Query and explore data from a DBSQL Warehouse.</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Create the first visualization using Dashboards and Genie.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="target">Target<a href="#target" class="hash-link" aria-label="Direct link to Target" title="Direct link to Target" translate="no">​</a></h2>
+<ul>
+<li class="">Introduce two Databricks products for Data Engineering:<!-- -->
+<ul>
+<li class="">Spark Declarative Pipelines (formerly known as Lakeflow Pipelines or DLT)</li>
+<li class="">Lakeflow Jobs.</li>
+</ul>
+</li>
+<li class="">Build the first pipeline.</li>
+<li class="">Build the first job.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="outcome">Outcome<a href="#outcome" class="hash-link" aria-label="Direct link to Outcome" title="Direct link to Outcome" translate="no">​</a></h2>
+<ul>
+<li class="">Create the first pipeline using Spark Declarative Pipelines.</li>
+<li class="">Create the first orchestration job using Lakeflow Jobs.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="data-engineering-on-databricks">Data Engineering on Databricks<a href="#data-engineering-on-databricks" class="hash-link" aria-label="Direct link to Data Engineering on Databricks" title="Direct link to Data Engineering on Databricks" translate="no">​</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n8XWOr6zIPo"></iframe>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="build-the-first-data-pipeline">Build the first data pipeline<a href="#build-the-first-data-pipeline" class="hash-link" aria-label="Direct link to Build the first data pipeline" title="Direct link to Build the first data pipeline" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="spark-declarative-pipelines-sdp">Spark Declarative Pipelines (SDP)<a href="#spark-declarative-pipelines-sdp" class="hash-link" aria-label="Direct link to Spark Declarative Pipelines (SDP)" title="Direct link to Spark Declarative Pipelines (SDP)" translate="no">​</a></h3>
+<ul>
+<li class="">Supports SQL or Python.</li>
+<li class=""><strong>Process multiple sources simultaneously</strong> whether streaming from Kafka, batch loading from cloud storage, or querying external databases.</li>
+<li class=""><strong>Built-in incremental processing</strong> intelligently tracks changes and processes only new or modified data, dramatically reducing compute costs and pipeline runtimes.</li>
+<li class=""><strong>Data quality is enforced through declarative expectations</strong> that you define inline with your transformations.</li>
+<li class="">Integrated with <strong>Unity Catalog</strong> (everything on Databricks is Unity Catalog).</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bsPBdKnZkr0"></iframe>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sdp-in-action">SDP in action!<a href="#sdp-in-action" class="hash-link" aria-label="Direct link to SDP in action!" title="Direct link to SDP in action!" translate="no">​</a></h3>
+<p>Install and run one of the following demos:</p>
+<ol>
+<li class=""><a href="https://www.databricks.com/resources/demos/tutorials/lakehouse-platform/lakeflow-declarative-pipeline" target="_blank" rel="noopener noreferrer" class="">Introduction to Lakeflow Spark Declarative Pipeline - Bike</a></li>
+<li class=""><a href="https://www.databricks.com/resources/demos/tutorials/lakehouse-platform/cdc-pipeline-with-delta-live-table?itm_data=demo_center" target="_blank" rel="noopener noreferrer" class="">CDC Pipeline With Lakeflow Spark Declarative Pipeline</a>.</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>When installing, specify the catalog name</div><div class="admonitionContent_BuS1"><div class="language-python codeBlockContainer_Ckt0 theme-code-block" style="--prism-background-color:hsl(230, 1%, 98%);--prism-color:hsl(230, 8%, 24%)"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-python codeBlock_bY9V thin-scrollbar" style="background-color:hsl(230, 1%, 98%);color:hsl(230, 8%, 24%)"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token keyword" style="color:hsl(301, 63%, 40%)">import</span><span class="token plain"> dbdemos</span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">catalog_name </span><span class="token operator" style="color:hsl(221, 87%, 60%)">=</span><span class="token plain"> </span><span class="token string" style="color:hsl(119, 34%, 47%)">&quot;dev&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">demo_name </span><span class="token operator" style="color:hsl(221, 87%, 60%)">=</span><span class="token plain"> </span><span class="token string" style="color:hsl(119, 34%, 47%)">&quot;pipeline-bike&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain"></span><span class="token comment" style="color:hsl(230, 4%, 64%)">#demo_name = &quot;declarative-pipeline-cdc&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:hsl(230, 8%, 24%)"><span class="token plain">dbdemos</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">.</span><span class="token plain">install</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">(</span><span class="token plain">demo_name</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">,</span><span class="token plain"> catalog </span><span class="token operator" style="color:hsl(221, 87%, 60%)">=</span><span class="token plain"> catalog_name</span><span class="token punctuation" style="color:hsl(119, 34%, 47%)">)</span><br></span></code></pre></div></div></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="references-for-sdp-development">References for SDP development<a href="#references-for-sdp-development" class="hash-link" aria-label="Direct link to References for SDP development" title="Direct link to References for SDP development" translate="no">​</a></h3>
+<ul>
+<li class="">Use the previous demo as a reference for your first pipeline.</li>
+<li class="">In addition, get familiar with the following resources:</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sdp-features">SDP Features<a href="#sdp-features" class="hash-link" aria-label="Direct link to SDP Features" title="Direct link to SDP Features" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://docs.databricks.com/aws/en/ldp/load" target="_blank" rel="noopener noreferrer" class="">Load data in pipelines</a>.<!-- -->
+<ul>
+<li class="">Data in cloud object storage is processed using <a href="https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/" target="_blank" rel="noopener noreferrer" class="">AutoLoader</a>.</li>
+</ul>
+</li>
+<li class=""><a href="https://docs.databricks.com/aws/en/ldp/flows" target="_blank" rel="noopener noreferrer" class="">Load and process data incrementally with Lakeflow Spark Declarative Pipelines flows
+</a>.</li>
+<li class=""><a href="https://docs.databricks.com/aws/en/ldp/transform" target="_blank" rel="noopener noreferrer" class="">Transform data with pipelines
+</a>.</li>
+<li class=""><a href="https://docs.databricks.com/aws/en/ldp/expectations" target="_blank" rel="noopener noreferrer" class="">Manage data quality with pipeline expectations
+</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="python">Python<a href="#python" class="hash-link" aria-label="Direct link to Python" title="Direct link to Python" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://docs.databricks.com/aws/en/ldp/developer/python-dev" target="_blank" rel="noopener noreferrer" class="">Develop SDP with Python
+</a>.</li>
+<li class=""><a href="https://docs.databricks.com/aws/en/ldp/developer/python-ref" target="_blank" rel="noopener noreferrer" class="">SDP Python language reference
+</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="sql">SQL<a href="#sql" class="hash-link" aria-label="Direct link to SQL" title="Direct link to SQL" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://docs.databricks.com/aws/en/ldp/developer/sql-dev" target="_blank" rel="noopener noreferrer" class="">Develop SDP with SQL</a>.</li>
+<li class=""><a href="https://docs.databricks.com/aws/en/ldp/developer/sql-ref" target="_blank" rel="noopener noreferrer" class="">SDP SQL language reference</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tutorials-and-code-examples">Tutorials and code examples<a href="#tutorials-and-code-examples" class="hash-link" aria-label="Direct link to Tutorials and code examples" title="Direct link to Tutorials and code examples" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://docs.databricks.com/aws/en/getting-started/data-pipeline-get-started#step-2-develop-your-pipeline-logic" target="_blank" rel="noopener noreferrer" class="">Tutorial: Build an ETL pipeline with Lakeflow Spark Declarative Pipelines
+</a>.</li>
+<li class=""><a href="https://github.com/ivancalvo-dbxs/medallion-pipeline-dabs/blob/main/src/pipeline_notebook.ipynb" target="_blank" rel="noopener noreferrer" class="">Sample pipeline notebook</a>.<!-- -->
+<ul>
+<li class=""><a href="https://www.youtube.com/watch?v=W8ucHwzwdhc" target="_blank" rel="noopener noreferrer" class="">Youtube walkthrough of the repo and project</a>.</li>
+<li class="">Focus and use the notebook as a development reference, ignore the repo and other files.</li>
+<li class=""><strong>Solid refence that shows how to build a Medallion Architecture on SDP</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="my-sdp-is-running-smoothly-now-whats-next">My SDP is running smoothly now, what&#x27;s next?<a href="#my-sdp-is-running-smoothly-now-whats-next" class="hash-link" aria-label="Direct link to My SDP is running smoothly now, what&#x27;s next?" title="Direct link to My SDP is running smoothly now, what&#x27;s next?" translate="no">​</a></h3>
+<ul>
+<li class="">Schedule the pipeline execution (and other tasks if required) with Lakeflow Jobs.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="build-the-first-orchestration-job">Build the first orchestration job.<a href="#build-the-first-orchestration-job" class="hash-link" aria-label="Direct link to Build the first orchestration job." title="Direct link to Build the first orchestration job." translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lakeflow-jobs">Lakeflow Jobs<a href="#lakeflow-jobs" class="hash-link" aria-label="Direct link to Lakeflow Jobs" title="Direct link to Lakeflow Jobs" translate="no">​</a></h3>
+<p>On Databricks, everything related to:</p>
+<ul>
+<li class="">Orchestration.</li>
+<li class="">Tasks, DAGs and dependencies.</li>
+<li class="">Schedule of execution and triggers.</li>
+<li class="">Retries and notifications (success, failures).</li>
+</ul>
+<p>Should be configured as a <a href="https://docs.databricks.com/aws/en/jobs" target="_blank" rel="noopener noreferrer" class="">Lakeflow Job (AKA Databricks Jobs)</a>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="jobs-in-action">Jobs in action!<a href="#jobs-in-action" class="hash-link" aria-label="Direct link to Jobs in action!" title="Direct link to Jobs in action!" translate="no">​</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BUFDNFA_AgA"></iframe>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>Databricks Workflows</div><div class="admonitionContent_BuS1"><ul>
+<li class="">Databricks Jobs (previously known as Databricks Workflows).</li>
+<li class="">If you read <strong>Workflow</strong> just remember that it is refering to a <strong>Job</strong>.</li>
+</ul></div></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0TOrtVEYeV8"></iframe>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="create-the-first-job">Create the first Job<a href="#create-the-first-job" class="hash-link" aria-label="Direct link to Create the first Job" title="Direct link to Create the first Job" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://docs.databricks.com/aws/en/jobs/jobs-quickstart" target="_blank" rel="noopener noreferrer" class="">Create your first Lakeflow Job
+</a>
+<ul>
+<li class="">The pipeline created on the previous step should be orchestrated from a Job.</li>
+</ul>
+</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/access-your-data-from-uc/external-systems/"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">External databases or warehouses</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/data-warehouse/"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">9. Data Warehouse</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#journey-progress" class="table-of-contents__link toc-highlight">Journey progress</a></li><li><a href="#target" class="table-of-contents__link toc-highlight">Target</a></li><li><a href="#outcome" class="table-of-contents__link toc-highlight">Outcome</a></li><li><a href="#data-engineering-on-databricks" class="table-of-contents__link toc-highlight">Data Engineering on Databricks</a></li><li><a href="#build-the-first-data-pipeline" class="table-of-contents__link toc-highlight">Build the first data pipeline</a><ul><li><a href="#spark-declarative-pipelines-sdp" class="table-of-contents__link toc-highlight">Spark Declarative Pipelines (SDP)</a></li><li><a href="#sdp-in-action" class="table-of-contents__link toc-highlight">SDP in action!</a></li><li><a href="#references-for-sdp-development" class="table-of-contents__link toc-highlight">References for SDP development</a></li><li><a href="#my-sdp-is-running-smoothly-now-whats-next" class="table-of-contents__link toc-highlight">My SDP is running smoothly now, what&#39;s next?</a></li></ul></li><li><a href="#build-the-first-orchestration-job" class="table-of-contents__link toc-highlight">Build the first orchestration job.</a><ul><li><a href="#lakeflow-jobs" class="table-of-contents__link toc-highlight">Lakeflow Jobs</a></li><li><a href="#jobs-in-action" class="table-of-contents__link toc-highlight">Jobs in action!</a></li><li><a href="#create-the-first-job" class="table-of-contents__link toc-highlight">Create the first Job</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Databricks Shared Technical Services (STS). Docs built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
