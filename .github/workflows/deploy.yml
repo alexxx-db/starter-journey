@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Build Docusaurus
-    runs-on: ubuntu-latest
+    runs-on: linux-ubuntu-latest
     defaults:
       run:
         working-directory: ./docs/starter-journey
@@ -50,7 +50,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
+    runs-on: linux-ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
