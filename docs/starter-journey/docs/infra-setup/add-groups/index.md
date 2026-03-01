@@ -6,6 +6,11 @@ import Admonition from '@theme/Admonition';
 
 # Add Groups
 
+:::info
+Add and manage groups for access control and permissions.
+:::
+
+
 ## Task-list
 - [x] ~~Identify target cloud tenant(s).~~
 - [ ] Infra setup.
@@ -21,10 +26,6 @@ import Admonition from '@theme/Admonition';
 - [ ] Query and explore.
 - [ ] Databricks AI/BI
 ---
-
-:::info
-Add and manage groups for access control and permissions.
-:::
 
 ## Expected groups (industry standard)
 

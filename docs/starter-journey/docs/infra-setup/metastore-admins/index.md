@@ -4,6 +4,11 @@ sidebar_position: 0
 
 # Metastore Admins
 
+:::info
+* Configure Unity Catalog metastore administration and asset ownership.
+
+:::
+
 ## Task-list
 - [x] ~~Identify target cloud tenant(s).~~
 - [ ] Infra setup.
@@ -20,7 +25,6 @@ sidebar_position: 0
 - [ ] Databricks AI/BI
 ---
 
-Configure Unity Catalog metastore administration and asset ownership.
 
 In this section:
 

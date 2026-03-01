@@ -4,6 +4,10 @@ sidebar_position: 0
 
 # Access your data
 
+:::info
+* Connect to and ingest data from various sources into Databricks.
+:::
+
 ## Task-list
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
@@ -15,7 +19,6 @@ sidebar_position: 0
 - [ ] Databricks AI/BI
 ---
 
-Connect to and ingest data from various sources into Databricks.
 
 In this section:
 

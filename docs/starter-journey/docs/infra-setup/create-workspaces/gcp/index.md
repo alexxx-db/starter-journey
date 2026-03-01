@@ -4,7 +4,9 @@ sidebar_position: 0
 
 # GCP
 
-Create Databricks workspaces on Google Cloud Platform.
+:::info
+* Create Databricks workspaces on Google Cloud Platform.
+:::
 
 In this section:
 

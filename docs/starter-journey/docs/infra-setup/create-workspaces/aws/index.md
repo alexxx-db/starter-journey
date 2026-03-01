@@ -4,7 +4,9 @@ sidebar_position: 0
 
 # AWS
 
-Create Databricks workspaces on Amazon Web Services.
+:::info
+* Create Databricks workspaces on AWS.
+:::
 
 In this section:
 

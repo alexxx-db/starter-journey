@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Starter Journey',
   tagline: 'Your step-by-step guide to get started on Databricks',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://databricks-solutions.github.io',
+  url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/starter-journey/',
 
@@ -74,7 +74,7 @@ const config: Config = {
       title: 'Starter Journey',
       logo: {
         alt: 'Starter Journey Logo',
-        src: 'img/logo.svg',
+        src: 'img/databricks.ico',
       },
       items: [
         {
@@ -94,23 +94,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {label: 'Get Started', to: '/docs/get-started'},
-            {label: 'Blog', to: '/blog'},
-          ],
-        },
-        {
-          title: 'Resources',
-          items: [
-            {label: 'Databricks', href: 'https://www.databricks.com/'},
-            {label: 'GitHub', href: 'https://github.com/databricks-solutions/starter-journey'},
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Databricks. Starter Journey - Get started on Databricks.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Databricks Industry Solutions`,
     },
     prism: {
       theme: prismThemes.github,

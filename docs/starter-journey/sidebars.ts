@@ -148,9 +148,29 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    {type: 'doc', id: 'build-first-pipeline', label: '6. Build the first pipeline'},
-    {type: 'doc', id: 'orchestration', label: '7. Automation & Orchestration'},
-    {type: 'doc', id: 'data-serving-exploration', label: '8. Query and explore'},
+    {
+      type: 'category',
+      label: '6. Build the first pipeline',
+      collapsed: true,
+      link: {type: 'doc', id: 'build-first-pipeline/index'},
+      items: [
+        'build-first-pipeline/ui',
+        'build-first-pipeline/dabs',
+        'build-first-pipeline/mcp-skills',
+      ],
+    },
+    {
+      type: 'category',
+      label: '7. Automation & Orchestration',
+      collapsed: true,
+      link: {type: 'doc', id: 'orchestration/index'},
+      items: [
+        'orchestration/ui',
+        'orchestration/dabs',
+        'orchestration/mcp-skills',
+      ],
+    },
+    {type: 'doc', id: 'query-and-explore', label: '8. Query and explore'},
     {
       type: 'category',
       label: '9. Databricks AI/BI',

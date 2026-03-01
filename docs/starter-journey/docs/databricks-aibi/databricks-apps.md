@@ -3,6 +3,7 @@
 
 # Databricks Apps
 
-Build and run Databricks Apps.
-
-*Content coming soon.*
+:::tip
+* Check the [Databricks Apps Cookbook
+](https://apps-cookbook.dev/).
+:::

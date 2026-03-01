@@ -4,7 +4,9 @@ sidebar_position: 0
 
 # Managed connectors
 
-Use managed connectors to connect to external data, run federated queries, and build ingestion pipelines.
+:::info
+* Use managed connectors to connect to external data, run federated queries, and build ingestion pipelines.
+:::
 
 In this section:
 

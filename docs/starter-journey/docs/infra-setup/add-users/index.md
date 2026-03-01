@@ -4,6 +4,10 @@ sidebar_position: 0
 
 # Add Users
 
+:::info
+* Add and manage users in your Databricks account.
+:::
+
 ## Task-list
 - [x] ~~Identify target cloud tenant(s).~~
 - [ ] Infra setup.
@@ -19,8 +23,6 @@ sidebar_position: 0
 - [ ] Query and explore.
 - [ ] Databricks AI/BI
 ---
-
-Add and manage users in your Databricks account.
 
 In this section:
 

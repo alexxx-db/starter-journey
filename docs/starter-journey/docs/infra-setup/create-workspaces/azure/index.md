@@ -4,7 +4,9 @@ sidebar_position: 0
 
 # Azure
 
-Create Databricks workspaces on Microsoft Azure.
+:::info
+* Create Databricks workspaces on Microsoft Azure.
+:::
 
 In this section:
 

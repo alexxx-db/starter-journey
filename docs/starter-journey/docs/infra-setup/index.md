@@ -8,7 +8,7 @@ sidebar_position: 0
 Set up workspaces, users, groups, and access control.
 :::
 
-## Journey progress
+## Task-list
 
 In this section:
 

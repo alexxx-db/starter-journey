@@ -4,6 +4,10 @@ sidebar_position: 0
 
 # Create Workspaces
 
+:::info
+* Create and manage Databricks workspaces in your cloud.
+:::
+
 ## Task-list
 - [x] ~~Identify target cloud tenant(s).~~
 - [ ] Infra setup.
@@ -19,8 +23,6 @@ sidebar_position: 0
 - [ ] Query and explore.
 - [ ] Databricks AI/BI
 ---
-
-Create and manage Databricks workspaces in your cloud.
 
 For workspace creation you have **AWS**, **Azure**, and **GCP**. Each cloud has:
 

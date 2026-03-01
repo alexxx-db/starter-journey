@@ -4,6 +4,11 @@ sidebar_position: 0
 
 # Data Governance Strategy
 
+:::info
+* Define your organization data governance strategy on Unity Catalog.
+* Don't skip these sections.
+:::
+
 ## Task-list
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
@@ -14,12 +19,6 @@ sidebar_position: 0
 - [ ] Query and explore.
 - [ ] Databricks AI/BI
 ---
-
-:::info
-* Define how your organization governs data with Unity Catalog.
-* Check both sections.
-:::
-
 
 In this section:
 

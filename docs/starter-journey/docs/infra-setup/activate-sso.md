@@ -3,6 +3,12 @@
 
 # Activate SSO
 
+:::info
+* Enable and configure Single Sign-On (SSO) for Databricks. 
+* Configure SSO so users can sign in with your identity provider (IdP) using single sign-on.
+:::
+
+
 ## Task-list
 - [x] ~~Identify target cloud tenant(s).~~
 - [ ] Infra setup.
@@ -19,9 +25,6 @@
 - [ ] Databricks AI/BI
 ---
 
-:::info
-Enable and configure Single Sign-On (SSO) for Databricks. Configure SSO so users can sign in with your identity provider (IdP) using single sign-on.
-:::
 
 :::warning Azure
 Not required, Entra ID is enabled by default.

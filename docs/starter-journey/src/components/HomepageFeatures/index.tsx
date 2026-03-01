@@ -11,32 +11,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Before you Start',
+    title: 'Built by Bricksters',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Learn the foundations: Account Console, Workspace, Unity Catalog, and get
-        your cloud tenant ready (single or multi-tenant).
+        Skip the guesswork - Get the "insider playbook" built by Databricks employees who have guided hundres of global customers to success.
       </>
     ),
   },
   {
-    title: 'Infra & Governance',
+    title: 'Your First Chapter',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Create workspaces (AWS, Azure, GCP), add users and groups, set up
-        metastore admins, activate SSO, and define your data governance strategy.
+        No Experience Required - Master the platform through simple storytelling. We’ve traded jargon for a clear, step-by-step path that anyone can follow.
       </>
     ),
   },
   {
-    title: 'Build & Scale',
+    title: 'Accelerate to win',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Access your data, build your first pipeline, orchestrate workloads, and
-        explore DevOps, AI/BI, cost monitoring, and AI/ML.
+        Don't get stuck in setup. Use our optimized resources to launch use cases faster and drive organizational value immediately.
       </>
     ),
   },
