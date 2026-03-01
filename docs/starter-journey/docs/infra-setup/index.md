@@ -4,7 +4,11 @@ sidebar_position: 0
 
 # Infra Setup
 
+:::info
 Set up workspaces, users, groups, and access control.
+:::
+
+## Journey progress
 
 In this section:
 

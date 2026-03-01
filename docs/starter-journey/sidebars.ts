@@ -117,7 +117,16 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       link: {type: 'doc', id: 'access-your-data/index'},
       items: [
-        'access-your-data/cloud-object-storage',
+        {
+          type: 'category',
+          label: 'Cloud object storage',
+          link: {type: 'doc', id: 'access-your-data/cloud-object-storage/index'},
+          items: [
+            'access-your-data/cloud-object-storage/aws',
+            'access-your-data/cloud-object-storage/azure',
+            'access-your-data/cloud-object-storage/gcp',
+          ],
+        },
         {
           type: 'category',
           label: 'Managed connectors',
@@ -129,10 +138,14 @@ const sidebars: SidebarsConfig = {
               link: {type: 'doc', id: 'access-your-data/managed-connectors/create-connection'},
               items: ['access-your-data/managed-connectors/create-connection/query-federation'],
             },
-            'access-your-data/managed-connectors/create-ingestion-pipeline',
+            {
+              type: 'category',
+              label: 'Create ingestion pipeline',
+              link: {type: 'doc', id: 'access-your-data/managed-connectors/create-ingestion-pipeline/index'},
+              items: ['access-your-data/managed-connectors/create-ingestion-pipeline/dabs-definition'],
+            },
           ],
         },
-        'access-your-data/saas',
       ],
     },
     {type: 'doc', id: 'build-first-pipeline', label: '6. Build the first pipeline'},

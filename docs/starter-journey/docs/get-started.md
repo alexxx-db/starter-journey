@@ -13,7 +13,7 @@ This guide walks you through the main stages of setting up and using Databricks,
 - **Before you Start** – Foundations and cloud tenant readiness
 - **Infra Setup** – Workspaces, users, groups, SSO
 - **Data Governance** – Strategy for small and large organizations
-- **Access your data** – Object storage, managed connectors, SaaS
+- **Access your data** – Object storage, managed connectors
 - **6. Build the first pipeline** – First pipeline
 - **7. Automation & Orchestration** – Jobs and workflows
 - **8. Query and explore** – Data serving and exploration

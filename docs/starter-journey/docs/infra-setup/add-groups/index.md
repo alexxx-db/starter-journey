@@ -6,6 +6,22 @@ import Admonition from '@theme/Admonition';
 
 # Add Groups
 
+## Task-list
+- [x] ~~Identify target cloud tenant(s).~~
+- [ ] Infra setup.
+    - [x] Create workspaces.
+    - [x] Add users.
+    - [ ] **Add groups.**
+    - [ ] Change ownership to metastore admins.
+    - [ ] Activate SSO.
+- [ ] Data Governance Strategy.
+- [ ] Access your data.
+- [ ] Build the first pipeline.
+- [ ] Automation and orchestration.
+- [ ] Query and explore.
+- [ ] Databricks AI/BI
+---
+
 :::info
 Add and manage groups for access control and permissions.
 :::
@@ -18,7 +34,7 @@ The groups below represent the different types of people who will be using your 
 
 <div style={{ textAlign: 'center', marginTop: 24, marginBottom: 8 }}>
   <img
-    src={useBaseUrl('/img/ucblog_grants.jpg')}
+    src={useBaseUrl('/img/ucblog-simple-grants.jpg')}
     alt="Diagram showing Databricks user groups and their permissions"
     style={{width: '100%' }}
   />

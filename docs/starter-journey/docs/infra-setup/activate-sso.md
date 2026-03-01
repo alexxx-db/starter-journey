@@ -3,6 +3,22 @@
 
 # Activate SSO
 
+## Task-list
+- [x] ~~Identify target cloud tenant(s).~~
+- [ ] Infra setup.
+    - [x] Create workspaces.
+    - [x] Add users.
+    - [x] Add groups.
+    - [x] Change ownership to metastore admins.
+    - [ ] **Activate SSO.**
+- [ ] Data Governance Strategy.
+- [ ] Access your data.
+- [ ] Build the first pipeline.
+- [ ] Automation and orchestration.
+- [ ] Query and explore.
+- [ ] Databricks AI/BI
+---
+
 :::info
 Enable and configure Single Sign-On (SSO) for Databricks. Configure SSO so users can sign in with your identity provider (IdP) using single sign-on.
 :::

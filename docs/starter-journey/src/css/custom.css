@@ -143,6 +143,16 @@
   fill: #FF3621;
 }
 
+/* Sidebar: hover and selected/active – same orange as navbar */
+.theme-doc-sidebar-container .menu__link:hover,
+.theme-doc-sidebar-container .menu__link--active,
+.theme-doc-sidebar-container .menu__link.menu__link--active {
+  color: #FF3621 !important;
+}
+.theme-doc-sidebar-container .menu__link--active:hover {
+  color: #FF3621 !important;
+}
+
 /* Footer – electric blue border */
 .footer {
   border-top: 1px solid rgba(0, 102, 255, 0.2);

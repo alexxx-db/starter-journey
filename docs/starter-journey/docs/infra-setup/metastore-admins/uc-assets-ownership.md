@@ -7,7 +7,7 @@ import Admonition from '@theme/Admonition';
 
 :::info
 * Change Unity Catalog assets ownership to follow the best practices mentioned on the groups section.
-* Change the ownership of all assets to the `Metastore Admins` | `Unity Admins` group.
+* Change the ownership of the existing assets to the `Metastore Admins` | `Unity Admins` group.
 :::
 
 ## Step-by-step guide for external locations - storage credentials - connections.
@@ -30,14 +30,21 @@ import Admonition from '@theme/Admonition';
 <img src={useBaseUrl('/img/uc-owners-2.jpg')} alt="description"/>
 <img src={useBaseUrl('/img/uc-owners-3.jpg')} alt="description"/>
 
-## Step-by-step guide for catalogs and schemas.
+## Step-by-step guide for catalogs.
 
 * On the workspace left panel, click on **Catalog**.
 * For each catalog **that is not the system catalog**:
     * Click the catalog.
     * On the overview tab, search for the **About this catalog** section to find the Owner.
     * Click the ✏️ icon to change the owner to `Metastore Admins` | `Unity Admins` group.
-        * For each schema in the catalog, change the owner to `Metastore Admins` | `Unity Admins` group.
+
+## What about the schemas owner?
+* In Databricks, we use Schemas (aka Databases) to hold all the Unity Catalog assets (tables, views, models, etc..) for a specific project.
+
+* **The Rule of Ownership:** If a specific group is in charge of a project, that group should own the folder (Schema) too.
+    * i.e `data-engineers` group owns the project `c360` therefore they must be the owners of `c360_bronze`, `c360_silver` and `c360_gold` schemas.
+
+The governance best practices would be cover on **[4. Data Governance Strategy](/docs/data-governance-strategy/)**.
 
 
 ### Screenshots
