@@ -5,14 +5,14 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  image: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Built by Bricksters',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    image: require('@site/static/img/build-by-bricksters.png').default,
     description: (
       <>
         Skip the guesswork - Get the "insider playbook" built by Databricks employees who have guided hundres of global customers to success.
@@ -21,16 +21,16 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Your First Chapter',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    image: require('@site/static/img/your-first-chapter.png').default,
     description: (
       <>
-        No Experience Required - Master the platform through simple storytelling. We’ve traded jargon for a clear, step-by-step path that anyone can follow.
+        No Experience Required - Master the platform through simple storytelling. We've traded jargon for a clear, step-by-step path that anyone can follow.
       </>
     ),
   },
   {
     title: 'Accelerate to win',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    image: require('@site/static/img/accelerate-to-win.png').default,
     description: (
       <>
         Don't get stuck in setup. Use our optimized resources to launch use cases faster and drive organizational value immediately.
@@ -39,11 +39,11 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, image, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img className={styles.featureImg} src={image} alt={title} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
