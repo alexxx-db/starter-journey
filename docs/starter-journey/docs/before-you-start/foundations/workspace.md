@@ -1,0 +1,31 @@
+---
+---
+
+# Workspace
+
+:::info
+Understand Databricks workspaces and how they fit into your setup.
+:::
+
+A Databricks workspace is a **cloud-based environment** where users organize and work with notebooks, jobs, dashboards, data, and compute resources in one place. Its main purpose is to give teams a secure, collaborative hub for building, running, and governing data engineering, analytics, and AI workloads, often with separate workspaces for dev, test, and production.
+
+![Workspace Organization](/img/workspace-organization.png)
+
+## What assets can be created in a Workspace?
+
+- [Databricks Workspace Objects](https://docs.databricks.com/aws/en/workspace/workspace-assets)
+- [Access Control List for Databricks Workspace Objects](https://docs.databricks.com/aws/en/security/auth/access-control).
+
+## Lessons learned
+
+:::info What is a Workspace?
+A Databricks workspace is a cloud-based environment where users access and organize all their Databricks assets—like notebooks, clusters, jobs, and dashboards for collaboration on data and AI tasks.
+:::
+
+:::info Recommended number of workspaces
+* An initial setup of three workspaces (dev, staging and prod) is recommended.
+:::
+
+:::info How can I isolate my organization data?
+* The physical and logical isolation is achieved throgh **Unity Catalog** (next section).
+:::

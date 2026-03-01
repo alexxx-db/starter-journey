@@ -1,28 +1,57 @@
-# REPO NAME 
+# Starter Journey
 
+A step-by-step guide for people getting started on Databricks. Whether you're setting up your first workspace, connecting to data, building pipelines, or exploring AI/ML, this guide walks you through each stage from foundations to production-ready workflows.
+
+Built with [Docusaurus](https://docusaurus.io/) and deployed to GitHub Pages.
+
+## How to run locally
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v20 or higher
+- npm (included with Node.js)
+
+### Install dependencies
+
+```bash
+cd docs/starter-journey
+npm install
 ```
-Placeholder
 
-Fill here a description at a functional level - what is this content doing
+### Start the development server
+
+```bash
+npx docusaurus start
 ```
 
-## Video Overview
+The site will be available at `http://localhost:3000`.
 
-Include a GIF overview of what your project does. Use a service like Quicktime, Zoom or Loom to create the video, then convert to a GIF.
+### Build for production
 
+```bash
+npx docusaurus build
+```
 
-## Installation
+### Serve the production build locally
 
-Include details on how to use and install this content. 
+```bash
+npx docusaurus serve
+```
 
-## How to get help
+## Project Support
 
-Databricks support doesn't cover this content. For questions or bugs, please open a GitHub issue and the team will help on a best effort basis.
+The code in this project is provided **for exploration purposes only** and is **not formally supported** by Databricks under any Service Level Agreements (SLAs). It is provided **AS-IS**, without any warranties or guarantees.
 
+Please **do not submit support tickets** to Databricks for issues related to the use of this project.
+
+The source code provided is subject to the Databricks [LICENSE](https://github.com/databricks-industry-solutions/security-analysis-tool/blob/main/LICENSE). All third-party libraries included or referenced are subject to their respective licenses set forth in the project license.
+
+Any issues or bugs found should be submitted as **GitHub Issues** on the project repository. While these will be reviewed as time permits, there are **no formal SLAs** for support.
 
 ## License
 
-&copy; 2025 Databricks, Inc. All rights reserved. The source in this notebook is provided subject to the Databricks License [https://databricks.com/db-license-source].  All included or referenced third party libraries are subject to the licenses set forth below.
+&copy; 2025 Databricks, Inc. All rights reserved. The source in this notebook is provided subject to the Databricks License [https://databricks.com/db-license-source]. All included or referenced third party libraries are subject to the licenses set forth below.
 
-| library                                | description             | license    | source                                              |
-|----------------------------------------|-------------------------|------------|-----------------------------------------------------|
+| library | description | license | source |
+|---------|-------------|---------|--------|
+| Docusaurus | Static site generator for documentation websites | MIT | https://github.com/facebook/docusaurus |
