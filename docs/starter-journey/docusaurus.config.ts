@@ -43,8 +43,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/databricks-solutions/starter-journey/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -54,8 +52,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          editUrl:
-            'https://github.com/databricks-solutions/starter-journey/tree/main/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',

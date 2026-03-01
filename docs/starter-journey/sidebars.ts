@@ -25,15 +25,8 @@ const sidebars: SidebarsConfig = {
           label: 'Cloud Tenant ready',
           link: {type: 'doc', id: 'before-you-start/cloud-tenant-ready/index'},
           items: [
-            {
-              type: 'category',
-              label: 'Single vs Multi tenant',
-              link: {type: 'doc', id: 'before-you-start/cloud-tenant-ready/single-vs-multi-tenant'},
-              items: [
-                'before-you-start/cloud-tenant-ready/single-tenant-setup',
-                'before-you-start/cloud-tenant-ready/multi-tenant-setup',
-              ],
-            },
+            'before-you-start/cloud-tenant-ready/single-tenant-setup',
+            'before-you-start/cloud-tenant-ready/multi-tenant-setup',
           ],
         },
       ],
@@ -83,7 +76,6 @@ const sidebars: SidebarsConfig = {
           label: 'Add Users',
           link: {type: 'doc', id: 'infra-setup/add-users/index'},
           items: [
-            'infra-setup/add-users/best-practices-and-considerations',
             'infra-setup/add-users/manual',
             'infra-setup/add-users/scim',
           ],
@@ -93,7 +85,6 @@ const sidebars: SidebarsConfig = {
           label: 'Add Groups',
           link: {type: 'doc', id: 'infra-setup/add-groups/index'},
           items: [
-            'infra-setup/add-groups/best-practices-and-considerations',
             'infra-setup/add-groups/manual',
             'infra-setup/add-groups/scim',
           ],

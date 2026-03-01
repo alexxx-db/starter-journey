@@ -3,6 +3,27 @@
 
 # Account Console
 
+:::info
 Learn about the Databricks Account Console and how to use it.
+:::
 
-*Content coming soon.*
+The Databricks account console is the central, account-level administration portal used to manage settings and resources that span multiple workspaces, equivalent to:
+  * AWS console.
+  * Azure portal.
+  * GCP cloud console.
+
+On the Databricks Account Console, the following Account objects can be provisioned and managed:
+
+* **Workspaces**.
+* Unity Catalog Metastore(s).
+* Users, Groups and Service Principals.
+* Billing and Budgets.
+* SCIM and SSO.
+* More on [Manage your Databricks account
+](https://docs.databricks.com/aws/en/admin/account-settings/).
+
+## High-level relation
+![Account Console Catalog Relation](/img/account-object-relation.png)
+
+## Deep-level relation
+![Account Console Deep Relation](/img/account-deep-relation.png)

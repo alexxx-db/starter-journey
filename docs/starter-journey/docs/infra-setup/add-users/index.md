@@ -8,6 +8,5 @@ Add and manage users in your Databricks account.
 
 In this section:
 
-- **[Best practices and considerations](/docs/infra-setup/add-users/best-practices-and-considerations)** – Guidance before you add users
 - **[Manual](/docs/infra-setup/add-users/manual)** – Add users through the UI
 - **[SCIM](/docs/infra-setup/add-users/scim)** – Automate user provisioning with SCIM
