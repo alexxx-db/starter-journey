@@ -1,10 +1,14 @@
 ---
 sidebar_position: 0
+sidebar_label: Before you Start
 ---
 
 # Before you Start
 
-Get ready for Databricks: learn the foundations and choose your cloud tenant model.
+:::info
+* Learn the Databricks concepts and products.
+* Identify your target cloud tenant for the initial deployment.
+:::
 
 In this section:
 

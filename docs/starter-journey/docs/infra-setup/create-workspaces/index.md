@@ -1,11 +1,12 @@
 ---
 sidebar_position: 0
+sidebar_label: Create Workspaces
 ---
 
 # Create Workspaces
 
 :::info
-* Create and manage Databricks workspaces in your cloud.
+* Create Databricks workspaces with a dedicated VPC/VNet.
 :::
 
 ## Task-list

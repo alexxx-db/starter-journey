@@ -21,7 +21,7 @@ A workspace is the environment where you create and integrate Databricks product
 :::
 
 :::info How can I isolate my organization data?
-* The physical and logical isolation is achieved throgh **Unity Catalog** (next section).
+* The physical and logical isolation is achieved through **Unity Catalog** (next section).
 :::
 
 ## Unity Catalog
@@ -33,7 +33,7 @@ Unity Catalog is a centralized metadata layer designed to manage data access, se
 The data, metadata and AI models are always stored in your cloud-object storage.
 :::
 
-:::info How should every data+AI interaction should be done?
+:::info How should every data+AI interaction be done?
 Through Unity Catalog.
 :::
 

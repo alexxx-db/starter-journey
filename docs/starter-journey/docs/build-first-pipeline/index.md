@@ -1,4 +1,5 @@
 ---
+sidebar_label: Build the first pipeline
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Admonition from '@theme/Admonition';
@@ -55,7 +56,7 @@ import Admonition from '@theme/Admonition';
 :::
 
 ## Spark Declarative Pipelines
-* [Apache Spark 4.1.1 Spark Declaratives Pipelines (SDP) documentation](https://spark.apache.org/docs/latest/declarative-pipelines-programming-guide.html).
+* [Apache Spark 4.1.1 Spark Declarative Pipelines (SDP) documentation](https://spark.apache.org/docs/latest/declarative-pipelines-programming-guide.html).
 * Python Pyspark and SQL support.
 * **Process multiple sources simultaneously** whether streaming from Kafka, batch loading from cloud storage, or querying external databases.
 * **Built-in incremental processing** intelligently tracks changes and processes only new or modified data, dramatically reducing compute costs and pipeline runtimes.
@@ -85,6 +86,6 @@ import Admonition from '@theme/Admonition';
 
 ## Create the first pipeline 🛠️
 
-- **[UI](/docs/build-first-pipeline/ui)** – Build a pipeline using the Databricks UI
-- **[DABs](/docs/build-first-pipeline/dabs)** – Build a pipeline using Databricks Asset Bundles
-- **[MCP skills](/docs/build-first-pipeline/mcp-skills)** – Build a pipeline using MCP skills
+- **[UI + Databricks Agent](/docs/build-first-pipeline/ui-databricks-agent)** – Build a pipeline using the Databricks UI and Databricks Agent.
+- **[DABs](/docs/build-first-pipeline/dabs)** – Build a pipeline using Databricks Asset Bundles.
+- **[MCP skills](/docs/build-first-pipeline/mcp-skills)** – Build a pipeline using MCP skills.

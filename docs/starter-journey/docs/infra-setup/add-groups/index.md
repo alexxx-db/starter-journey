@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+sidebar_label: Add Groups
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Admonition from '@theme/Admonition';
@@ -64,13 +65,13 @@ These are the people who build and maintain the "plumbing" for your data. Withou
 
 * **The Goal:** To ensure the data "pipes" never leak and that the information is always fresh and accurate.
 
-* **Toolstak:** Python, Spark, SQL, Dashboards, CI/CD and DevOps.
+* **Tool stack:** Python, Spark, SQL, Dashboards, CI/CD and DevOps.
 
 ### Data Scientist
 These are the folks who turn raw data into smart predictions. They use existing information to build Machine Learning models and Generative AI (GenAI) tools.
     * **What they can see:** They have "Read-Only" access. Think of this like a library—they can read the books (tables) and take notes, but they aren't allowed to scribble in the margins or delete the pages.
     * **What they do:** They study specific sets of data to create solutions that "predict" the future or generate new content.
-    * * **Toolstak:** Python, Pandas, MLflow, ML and GenAI frameworks.
+    * **Tool stack:** Python, Pandas, MLflow, ML and GenAI frameworks.
 
 ### Data Analyst
 
@@ -82,9 +83,9 @@ These are the people who turn numbers into answers. They look at what happened i
 
 * **The Goal:** To provide "Business Intelligence"—basically, making sure the leadership team has the facts they need to run the company.
 
-* **Toolstak:** SQL, Dashboards and Visualizations.
+* **Tool stack:** SQL, Dashboards and Visualizations.
 
-### Business User (often refered as BI User or Data Consumer)
+### Business User (often referred to as BI User or Data Consumer)
 
 These are the people who use data to make quick, daily decisions. They don’t need to see the "messy" side of data—they just want the final answers.
 
@@ -96,7 +97,7 @@ These are the people who use data to make quick, daily decisions. They don’t n
 
 * **The Goal:** To get clear, visual answers to business questions without ever touching a line of code or a complex database.
 
-* **Toolstak:** Excel.
+* **Tool stack:** Excel.
 
 ### Workspace Admins
 

@@ -12,7 +12,7 @@ Follow the two sections:
 :::
 
 :::warning
-The workspace creation on Terraform does not includes a default catalog creation. Therefore the second module is required too.
+The workspace creation on Terraform does not include a default catalog creation. Therefore the second module is required too.
 :::
 
 ## Workspace deployment
@@ -26,7 +26,7 @@ The workspace creation on Terraform does not includes a default catalog creation
 - Use the prefix to apply the environment isolation.
   - Example #1: creating the first workspace (development).
     - prefix can be **dev** or **development**.
-    - prefix can also have the businesss unit name.
+    - prefix can also have the business unit name.
       - i.e **finance_dev** or **finance_dev**
 :::
 

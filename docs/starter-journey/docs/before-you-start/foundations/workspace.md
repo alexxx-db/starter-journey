@@ -27,5 +27,5 @@ A Databricks workspace is a cloud-based environment where users access and organ
 :::
 
 :::info How can I isolate my organization data?
-* The physical and logical isolation is achieved throgh **Unity Catalog** (next section).
+* The physical and logical isolation is achieved through **Unity Catalog** (next section).
 :::

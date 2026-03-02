@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 
 <div style={{textAlign: 'left'}}>
   <img src={useBaseUrl('/img/aws/aws_create_buttom_s3bucket.png')} 
-  alt="create s3"
+  alt="create S3 bucket"
   style={{width: '50%', height: 'auto'}}
   
   />
@@ -47,15 +47,15 @@ import Admonition from '@theme/Admonition';
    - **Bucket name**: Provide a descriptive name for the bucket
    - **Object ownership**: ACLS Disable
    - **Block public access**: block all public access
-   - **Bucker versioning**: Disable
-   - **Tags**: opitionals but recommended
+   - **Bucket versioning**: Disable
+   - **Tags**: optional but recommended
    - **Default encryption**: server side encryption with Amazon S3 Managed Keys (SSE-S3)
    - **Bucket key**: Disable
    
 
 <div style={{textAlign: 'left'}}>
   <img src={useBaseUrl('/img/aws/s3bucketoptoins_part1.png')} 
-  alt="s3bucketoptoins_part1"
+  alt="S3 bucket options part 1"
   style={{width: '70%', height: 'auto'}}
   
   />
@@ -63,7 +63,7 @@ import Admonition from '@theme/Admonition';
 
    <div style={{textAlign: 'left'}}>
   <img src={useBaseUrl('/img/aws/s3bucketoptoins_part2.png')} 
-  alt="s3bucketoptoins_part2"
+  alt="S3 bucket options part 2"
   style={{width: '70%', height: 'auto'}}
   
   />
@@ -78,7 +78,7 @@ import Admonition from '@theme/Admonition';
 
 <div style={{textAlign: 'left'}}>
   <img src={useBaseUrl('/img/aws/aws_external_data_buttom.png')} 
-  alt="external data buttom"
+  alt="external data button"
   style={{width: '80%', height: 'auto'}}
   
   />
@@ -89,7 +89,7 @@ import Admonition from '@theme/Admonition';
 
 <div style={{textAlign: 'left'}}>
   <img src={useBaseUrl('/img/aws/create_externallocation_buttom.png')} 
-  alt="create external location buttom"
+  alt="create external location button"
   style={{width: '70%', height: 'auto'}}
   
   />
