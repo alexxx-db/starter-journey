@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+sidebar_label: DevOps and CI/CD
 ---
 
 # DevOps and CI/CD

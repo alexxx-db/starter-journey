@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+sidebar_label: Foundations
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Admonition from '@theme/Admonition';

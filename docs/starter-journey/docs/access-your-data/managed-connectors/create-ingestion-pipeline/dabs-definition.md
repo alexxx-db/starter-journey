@@ -5,7 +5,7 @@
 
 :::info
 * Define and deploy ingestion pipelines using Databricks Asset Bundles (DABs).
-* This code example was inspired on [Create pipeline for PostgreSQL](https://docs.databricks.com/aws/en/ingestion/lakeflow-connect/postgresql-pipeline#create-the-gateway-and-ingestion-pipeline).
+* The code example was inspired on [Create pipeline for PostgreSQL](https://docs.databricks.com/aws/en/ingestion/lakeflow-connect/postgresql-pipeline#create-the-gateway-and-ingestion-pipeline).
     * The only difference is the classic compute specification for the ingestion gateway pipeline.
     * Check all the other connectors on the Databricks documentation - left panel.
 * Check [Feature Availability](https://docs.databricks.com/aws/en/ingestion/lakeflow-connect/?language=PostgreSQL#feature-availability) for your data source.

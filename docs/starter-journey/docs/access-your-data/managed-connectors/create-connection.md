@@ -10,10 +10,10 @@ Create a managed connection to external data sources.
 :::
 
 The two purposes of Unity Catalog connection is to:
-1. Create a foregin catalog to push-down queries from Databricks.
+1. Create a foreign catalog to push-down queries from Databricks.
     * For use cases where just a small subset of the external data source is required.
 2. Create a managed ingestion pipeline into Unity Catalog using **Lakeflow Connect**.
-    * For use cases that required a continue CDC ingestions from the external data source into Databricks.
+    * For use cases that require continuous CDC ingestion from the external data source into Databricks.
 
 ## Create Connection
 <br />
@@ -37,7 +37,7 @@ The two purposes of Unity Catalog connection is to:
 
 <div style={{textAlign: 'left'}}>
   <img src={useBaseUrl('/img/aws/aws_external_data_buttom.png')} 
-  alt="external data buttom"
+  alt="external data button"
   style={{width: '80%', height: 'auto'}}
   />
 </div>
@@ -46,7 +46,7 @@ The two purposes of Unity Catalog connection is to:
 3. Click on "Connections"
 <div style={{textAlign: 'left'}}>
   <img src={useBaseUrl('/img/aws/addconnectionbuttom.png')} 
-  alt="external data buttom"
+  alt="add connection button"
   style={{width: '80%', height: 'auto'}}
   />
 </div>

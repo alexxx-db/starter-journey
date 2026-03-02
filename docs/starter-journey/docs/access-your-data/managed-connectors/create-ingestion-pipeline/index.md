@@ -1,4 +1,5 @@
 ---
+sidebar_label: Create ingestion pipeline
 ---
 
 # Create ingestion pipeline
@@ -6,7 +7,7 @@
 :::info
 * Before creating the ingestion pipeline, get familiar with [Managed connectors in Lakeflow Connect.
 ](https://docs.databricks.com/aws/en/ingestion/lakeflow-connect).
-* Ingestions pipelines required a connection (covered in the last section).
+* Ingestion pipelines require a connection (covered in the last section).
 :::
 
 :::warning 
@@ -51,7 +52,7 @@ Mar 1st, 2026 - The UI ingestion pipeline creation is full serverless. If classi
 
 ---
 
-### Sharepoint
+### SharePoint
 
 <br />
 <iframe
@@ -62,7 +63,7 @@ Mar 1st, 2026 - The UI ingestion pipeline creation is full serverless. If classi
 
 ---
 
-### Sharepoint
+### ServiceNow
 
 <br />
 <iframe

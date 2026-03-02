@@ -8,40 +8,14 @@ import Admonition from '@theme/Admonition';
 
 Welcome to **Starter Journey**: Your roadmap to master Databricks.
 
-# Common projects on Databricks
-
-## BI/Analytics
-
-:::warning
-    * Content being added soon.
-:::
-
-## Predictive Analytics
-
-:::warning
-    * Content being added soon.
-:::
-
-## GenAI Powered Solutions
-
-:::warning
-    * Content being added soon.
-:::
-
-## Information Extraction
-
-:::warning
-    * Content being added soon.
-:::
-
 ## All about data
 
-All the previous project share the same foundation:
-    * **BI & Analytics:** Require Reliable Data to transform raw information into the "single source of truth" necessary for confident, data-driven business decisions.
-    * **Predictive AI & ML:** Demand High-Quality Data to ensure that training and validation processes result in models that are both accurate and performant.
-    * **GenAI & Agents:** Depend on curated data to anchor Large Language Models (LLMs) in facts, ensuring chatbots provide trustable, hallucination-free answers.
+Databricks Projects share the same foundation:
+* **BI & Analytics:** Require ***reliable data*** to transform raw information into the "single source of truth" necessary for confident, data-driven business decisions.
+* **Predictive AI & ML:** Demand ***high-quality data*** to ensure that training and validation processes result in models that are both accurate and performant.
+* **GenAI & Agents:** Depend on ***curated data*** to anchor Large Language Models (LLMs) in facts, ensuring chatbots provide trustable, hallucination-free answers.
 
-Follow the Starter Journey to learn how to get up and running on Databricks.
+One of the main goals of the Starter Journey is to establish a solid Databricks foundations for your upcoming Databricks projects.
 
 ## What's in this guide
 

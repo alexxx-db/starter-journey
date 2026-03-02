@@ -7,7 +7,7 @@
 Add groups using SCIM provisioning.
 :::
 
-Configure SCIM user provisioning to sync your users from your identify provider into Databricks.
+Configure SCIM user provisioning to sync your users from your identity provider into Databricks.
 
 * [Sync users and groups from your identity provider using SCIM.
 ](https://docs.databricks.com/aws/en/admin/users-groups/scim/)

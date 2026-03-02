@@ -61,7 +61,7 @@ Is the centralized governance layer designed to manage data access, security, li
 The data, metadata and AI models are always stored in your organization cloud account.
 :::
 
-:::info How should every data+AI interaction should be done?
+:::info How should every data+AI interaction be done?
 Through UC.
 :::
 

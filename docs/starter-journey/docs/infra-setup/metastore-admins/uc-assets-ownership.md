@@ -24,7 +24,7 @@ import Admonition from '@theme/Admonition';
 ### Screenshots
 :::warning
     * Access external locations, storage credentials, and connections by clicking the wheel icon (⚙️).
-    * The first screenshould is going to be updated soon.
+    * The first screenshot is going to be updated soon.
 :::
 <img src={useBaseUrl('/img/uc-owners-1.jpg')} alt="description"/>
 <img src={useBaseUrl('/img/uc-owners-2.jpg')} alt="description"/>
@@ -44,7 +44,7 @@ import Admonition from '@theme/Admonition';
 * **The Rule of Ownership:** If a specific group is in charge of a project, that group should own the folder (Schema) too.
     * i.e `data-engineers` group owns the project `c360` therefore they must be the owners of `c360_bronze`, `c360_silver` and `c360_gold` schemas.
 
-The governance best practices would be cover on **[4. Data Governance Strategy](/docs/data-governance-strategy/)**.
+The governance best practices would be covered on **[4. Data Governance Strategy](/docs/data-governance-strategy/)**.
 
 
 ### Screenshots

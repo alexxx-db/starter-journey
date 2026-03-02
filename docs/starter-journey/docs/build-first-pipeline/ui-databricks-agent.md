@@ -1,7 +1,7 @@
 ---
 ---
 
-# UI
+# UI + Databricks Agent
 
 :::info
 Build a pipeline using the Databricks UI and Databricks Agent.

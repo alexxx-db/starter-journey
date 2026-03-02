@@ -1,10 +1,17 @@
 ---
 sidebar_position: 0
+sidebar_label: Databricks Asset Bundles
 ---
 
 # Databricks Asset Bundles
 
-Deploy and manage Databricks workloads with Asset Bundles (DABs).
+:::warning
+* 🛠️ UNDER CONSTRUCTION 🛠️
+:::
+
+:::info
+Deploy and manage Databricks end-to-end projects with Asset Bundles (DABs).
+:::
 
 In this section:
 

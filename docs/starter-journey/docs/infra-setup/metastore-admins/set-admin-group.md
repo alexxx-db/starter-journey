@@ -24,9 +24,9 @@ Configure the metastore admin group.
 * On the left panel, click on **Catalog**.
 * Click on the available metastore.
 * **Verify that the metastore owner is a group**
-* If the metastore Admin is an user or a Service Principal:
+* If the metastore Admin is a user or a Service Principal:
     * **Change the ownership**: assign the metastore admins or unity admin group as the new Admin.
-* Select the metastore auto-assigment on new Workspaces.
+* Select the metastore auto-assignment on new Workspaces.
 * (optional) Activate Delta Sharing if required for your projects.
 
 <img src={useBaseUrl('/img/account-metastore-owner.png')} alt="description"/>

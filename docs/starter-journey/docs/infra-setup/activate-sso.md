@@ -25,6 +25,7 @@
 - [ ] Databricks AI/BI
 ---
 
+## Configure SSO in the Account
 
 :::warning Azure
 Not required, Entra ID is enabled by default.

@@ -1,4 +1,5 @@
 ---
+sidebar_label: Automation & Orchestration
 ---
 
 # 7. Automation & Orchestration

@@ -5,7 +5,7 @@
 
 :::info
 * Build a pipeline using Databricks Asset Bundles (DABs).
-* DABs is introduced layer in the Starter Journey but feel free to start from here.
+* DABs is introduced later in the Starter Journey but feel free to start from here.
 :::
 
 # 

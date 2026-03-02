@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+sidebar_label: Cloud Object Storage
 ---
 
 # Cloud Object Storage

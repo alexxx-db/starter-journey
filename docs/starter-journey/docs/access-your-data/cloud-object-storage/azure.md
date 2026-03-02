@@ -41,8 +41,8 @@ Connect to data in Azure Data Lake Storage (ADLS) from Databricks.
 4. Click the "Create" button to start the Access Connector creation process
 
 <div style={{textAlign: 'left'}}>
-  <img src={useBaseUrl('/img/azure/create_access_connector_buttom.png')} 
-  alt="Create Access Connector Button"
+  <img src={useBaseUrl('/img/azure/create_access_connector_buttom.png')}
+  alt="Create Access Connector button"
   style={{width: '50%', height: 'auto'}}
   />
 </div>
@@ -354,7 +354,7 @@ This step grants your Databricks Access Connector the necessary permissions to r
   width="560"
   height="315"
   src="https://www.youtube.com/embed/k3Ed5MlLy0E"
-  title="Add an Acces Connector and External Location in Azure Databricks"
+  title="Add an Access Connector and External Location in Azure Databricks"
   frameBorder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen

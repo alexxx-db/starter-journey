@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+sidebar_label: Cloud Tenant ready
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Admonition from '@theme/Admonition';
@@ -49,4 +50,4 @@ Best for: Small teams or companies that keep everything in one place.
 
 On the other hand, if your organization has multiple cloud tenants, you must proceed with this setup:
 
-- **[Multi-tenant setup](/docs/before-you-start/cloud-tenant-ready/multi-tenant-setup)** – Multiple tenants (e.g. by environment or business unitdivision)
+- **[Multi-tenant setup](/docs/before-you-start/cloud-tenant-ready/multi-tenant-setup)** – Multiple tenants (e.g. by environment or business unit/division)

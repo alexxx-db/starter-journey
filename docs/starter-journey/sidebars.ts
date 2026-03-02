@@ -154,7 +154,7 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
       link: {type: 'doc', id: 'build-first-pipeline/index'},
       items: [
-        'build-first-pipeline/ui',
+        'build-first-pipeline/ui-databricks-agent',
         'build-first-pipeline/dabs',
         'build-first-pipeline/mcp-skills',
       ],
@@ -203,7 +203,7 @@ const sidebars: SidebarsConfig = {
       label: '11. Cost Monitoring',
       collapsed: true,
       link: {type: 'doc', id: 'cost-monitoring/index'},
-      items: ['cost-monitoring/industry-best-practice'],
+      items: [],
     },
     {
       type: 'category',

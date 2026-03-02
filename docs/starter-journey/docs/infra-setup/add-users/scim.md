@@ -12,7 +12,7 @@ Add users using SCIM provisioning.
 ](https://learn.microsoft.com/en-us/azure/databricks/admin/users-groups/automatic-identity-management)
 :::
 
-Configure SCIM user provisioning to sync your users from your identify provider into Databricks.
+Configure SCIM user provisioning to sync your users from your identity provider into Databricks.
 
 * [Sync users and groups from your identity provider using SCIM.
 ](https://docs.databricks.com/aws/en/admin/users-groups/scim/)

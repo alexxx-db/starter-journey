@@ -21,19 +21,19 @@ Data governance strategy for small organizations.
 This is the playground where your team builds and experiments. It’s the place to try out new ideas and write new code.
 * **Who’s allowed in:** Data Engineers and Data Scientists.
 * **The Goal:** To give creators a safe space to break things, fix them, and learn without affecting the rest of the company.
-* **Binded to**: Development workspace.
+* **Bound to**: Development workspace.
 
 ### Staging ⚖️
 This is the final checkpoint. Once a project is finished in the "Lab," it moves here to be tested against real-world scenarios to ensure everything is perfect.
 * **Who’s allowed in:** Developers (to test) and Quality Testers (to approve).
 * **The Goal:** To catch any last-minute "bugs" or mistakes before the data is shown to the bosses.
-* **Binded to**: Staging workspace.
+* **Bound to**: Staging workspace.
 
 ### Production 🚀 
 This is the official, high quality and reliable data. This is the only version of the data that the leadership team uses for their daily reports and dashboards.
 * **Who’s allowed in:** Automated systems and Business Users (View-Only).
 * **The Goal:** To provide a 100% reliable and secure environment where the data is always accurate and "live."
-* **Binded to**: Production workspace.
+* **Bound to**: Production workspace.
 
 ---
 
@@ -81,7 +81,7 @@ This is the final, polished version. The data here has been specially organized 
 
 * **The Rule of Ownership:** If a specific group (like the `Marketing-DEs`) is in charge of a project, that group should the schemas.
 * **Sharing is caring:** If another team needs to see a specific table or UC asset, the owners simply grant them the correct level of access. 
-    *  The permissions should be provided at the schema level for beter management.
+    *  The permissions should be provided at the schema level for better management.
         * ***Data Reader*** permissions.
         * ***Data Editor*** permissions.
 * **The Benefit:** This keeps the data safe because it means only the people who actually need the information can get to it.
