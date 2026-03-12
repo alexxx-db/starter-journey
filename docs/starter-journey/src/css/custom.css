@@ -166,6 +166,26 @@ a:hover {
   color: var(--ifm-link-hover-color);
 }
 
+/* Blog post title – smaller size and black color */
+.blog-post-page header h1,
+.blog-list-page article header h2 {
+  font-size: 1.6rem;
+}
+.blog-list-page article header h2 a {
+  color: #1a1a1a;
+}
+.blog-list-page article header h2 a:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+[data-theme='dark'] .blog-list-page article header h2 a {
+  color: #e6e6e6;
+}
+[data-theme='dark'] .blog-list-page article header h2 a:hover {
+  color: #e6e6e6;
+  text-decoration: underline;
+}
+
 /* Focus – neon glow */
 :focus-visible {
   outline: 2px solid var(--ifm-color-primary);
