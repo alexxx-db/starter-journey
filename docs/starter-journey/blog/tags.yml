@@ -1,21 +1,12 @@
-welcome:
-  label: Welcome
-  permalink: /blog/tags/welcome
-databricks:
-  label: Databricks
-  permalink: /blog/tags/databricks
 unity-catalog:
   label: Unity Catalog
   permalink: /blog/tags/unity-catalog
-governance:
-  label: Governance
-  permalink: /blog/tags/governance
-video:
-  label: Video
-  permalink: /blog/tags/video
 youtube:
   label: YouTube
   permalink: /blog/tags/youtube
-workspace:
-  label: Workspace
-  permalink: /blog/tags/workspace
+medium:
+  label: Medium
+  permalink: /blog/tags/medium
+linkedin:
+  label: Linkedin
+  permalink: /blog/tags/linkedin
