@@ -12,7 +12,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Built by Bricksters',
-    image: require('@site/static/img/build-by-bricksters.png').default,
+    image: require('@site/static/img/build-by-bricksters.webp').default,
     description: (
       <>
         Skip the guesswork - Get the "insider playbook" built by Databricks employees who have guided hundres of global customers to success.
@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Your First Chapter',
-    image: require('@site/static/img/your-first-chapter.png').default,
+    image: require('@site/static/img/your-first-chapter.webp').default,
     description: (
       <>
         No Experience Required - Master the platform through simple storytelling. We've traded jargon for a clear, step-by-step path that anyone can follow.
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Accelerate to win',
-    image: require('@site/static/img/accelerate-to-win.png').default,
+    image: require('@site/static/img/accelerate-to-win.webp').default,
     description: (
       <>
         Don't get stuck in setup. Use our optimized resources to launch use cases faster and drive organizational value immediately.
