@@ -8,7 +8,8 @@ import Admonition from '@theme/Admonition';
 # Add Groups
 
 :::info
-Add and manage groups for access control and permissions.
+* Follow the industry standard.
+* Add and manage groups for access control and permissions.
 :::
 
 
@@ -28,7 +29,7 @@ Add and manage groups for access control and permissions.
 - [ ] Databricks AI/BI
 ---
 
-## Expected groups (industry standard)
+## Industry standard
 
 :::info
 The groups below represent the different types of people who will be using your data. Think of these as "job roles" within your project.
