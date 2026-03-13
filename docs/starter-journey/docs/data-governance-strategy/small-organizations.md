@@ -17,52 +17,82 @@ Data governance strategy for small organizations.
 
 <img src={useBaseUrl('/img/ucblog-simple-catalogs.jpg')} alt="description"/>
 
-### Development 🧪
-This is the playground where your team builds and experiments. It’s the place to try out new ideas and write new code.
-* **Who’s allowed in:** Data Engineers and Data Scientists.
+### Development
+Playground where your team builds and experiments. It’s the place to try out new ideas and write new code.
+* **Who’s allowed in:** All data teams.
 * **The Goal:** To give creators a safe space to break things, fix them, and learn without affecting the rest of the company.
 * **Bound to**: Development workspace.
 
-### Staging ⚖️
+### Staging
 This is the final checkpoint. Once a project is finished in the "Lab," it moves here to be tested against real-world scenarios to ensure everything is perfect.
-* **Who’s allowed in:** Developers (to test) and Quality Testers (to approve).
+* **Who’s allowed in:** Developers (to test) and DevOps / Quality Testers (to approve).
 * **The Goal:** To catch any last-minute "bugs" or mistakes before the data is shown to the bosses.
 * **Bound to**: Staging workspace.
 
-### Production 🚀 
+### Production
 This is the official, high quality and reliable data. This is the only version of the data that the leadership team uses for their daily reports and dashboards.
-* **Who’s allowed in:** Automated systems and Business Users (View-Only).
+* **Who’s allowed in:** Production assets are restricted to view-only access for Business Users, with modifications managed exclusively via Automation and Service Principals.
 * **The Goal:** To provide a 100% reliable and secure environment where the data is always accurate and "live."
 * **Bound to**: Production workspace.
 
 ---
 
+
 ## Schemas
 
 <img src={useBaseUrl('/img/ucblog-simple-schemas.jpg')} alt="description"/>
 
-### The Medallion Journey: From Raw to Gold 🏆
+### The Medallion Journey: From Raw to Gold
 
-Think of the **Medallion Architecture** as a high-end cleaning service for your data. It takes "messy" information from the outside world and transforms it into "gold" for your company's leaders.
-
-To keep things organized, we use **Schemas** as the folders for each project. As a best practice, always add your **Project Name** as a prefix (for example: `c360_bronze` or `salesforecast_gold`).
-
-
+Databricks recommended structure for organizing projects. For a detailed explanation, check out the following blog post that explores this topic in depth:
+    * [Modeling a Medallion Architecture on Unity Catalog for your Organizational Structure
+](https://blog.databricksforstartups.com/part-1-modeling-a-medallion-architecture-on-unity-catalog-for-your-organizational-structure-b8f0f9918c26).
 
 ### Bronze Layer 🥉
-This is where data first arrives. It is a perfect "carbon copy" of the original source—nothing has been changed, cleaned, or fixed yet.
-* **Naming Example:** `PROJECT_NAME_bronze`
-* **The Goal:** To keep a permanent record of the original data just in case we ever need to go back and double-check a number.
+
+The Bronze layer contains raw data from the landing zone. When data is ingested into Databricks from external sources, it lands here first. This data is a "carbon copy" of the original—nothing has been edited, filtered, or fixed yet.
+
+* **Naming Pattern:** [PROJECT_NAME]_bronze
+* **Purpose:** To act as a historical record. If a mistake happens later in the process, we can always come back here to re-process the original data without needing to go back to the source.
+
+:::note Unity Catalog terms
+* Contains:
+    * Streaming tables: Reads raw data from cloud object storage.
+    * Tables created by a Lakeflow ingestion pipeline.
+* More on sections 5. and 6.
+:::
+---
 
 ### Silver Layer 🥈 
-In this layer, we "wash" the data. We fix typos, remove duplicates, and make sure all the dates and labels are consistent and easy to read.
-* **Naming Example:** `PROJECT_NAME_silver`
-* **The Goal:** To create a reliable, "clean" version of the data that different teams can trust and share.
+
+In the Silver layer, the data is refined. We transform the raw Bronze data by fixing typos, removing duplicate rows, and ensuring dates and currencies are in the correct format. This is where we join different tables together to create a clearer picture.
+
+* **Naming Pattern:** [PROJECT_NAME]_silver
+* **Purpose:** To provide a "Single Source of Truth." This is the data that analysts use for ad-hoc queries because it is predictable and high-quality.
+
+:::note Unity Catalog terms
+* Contains:
+    * Streaming tables: streaming transformations from bronze layer streaming tables.
+    * Tables: transformations from bronze layer tables.
+* More on sections 5. and 6.
+:::
+
+---
 
 ### Gold Layer 🥇 
-This is the final, polished version. The data here has been specially organized to answer big business questions, like "How much did we sell today?" or "Who are our top customers?"
-* **Naming Example:** `PROJECT_NAME_gold`
-* **The Goal:** To provide the "Gold Standard" answers that power your company’s official dashboards and reports.
+
+The Gold layer is the final product. Data here is aggregated and structured to answer specific business questions, such as "What were the total sales by region?" or "What is our monthly active user count?"
+
+* **Naming Pattern:** [PROJECT_NAME]_gold
+* **Purpose:** To power official company dashboards and executive reports. It is optimized for speed and clarity rather than raw detail.
+
+:::note Unity Catalog terms
+* Contains:
+    * Materialized views.
+    * Metric views.
+    * Tables.
+* More on sections 5. and 6.
+:::
 
 ---
 
