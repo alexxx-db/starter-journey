@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Starter Journey',
-  tagline: 'Everything you need to get started',
+  tagline: 'The essential building blocks for organizations starting with Databricks',
   favicon: 'img/icon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
