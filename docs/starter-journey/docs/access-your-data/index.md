@@ -9,7 +9,7 @@ sidebar_label: Access your data
 * Connect to and ingest data from various sources into Databricks.
 :::
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [x] ~~Data Governance Strategy.~~

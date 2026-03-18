@@ -10,7 +10,7 @@ sidebar_label: Metastore Admins
 
 :::
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [ ] Infra setup.
     - [x] Create workspaces.

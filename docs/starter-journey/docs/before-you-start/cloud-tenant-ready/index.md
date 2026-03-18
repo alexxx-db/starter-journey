@@ -11,7 +11,7 @@ import Admonition from '@theme/Admonition';
 Choose how your organization will use Databricks in the cloud.
 :::
 
-## Task-list
+## Journey checklist
 
 - [ ] **Identify your organization cloud tenant(s).**
 - [ ] Create the workspace(s).

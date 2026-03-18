@@ -9,7 +9,21 @@ sidebar_label: Infra Setup
 Set up workspaces, users, groups, and access control.
 :::
 
-## Task-list
+## Journey checklist
+- [x] ~~Identify target cloud tenant(s).~~
+- [ ] Infra setup.
+    - [ ] **Create workspaces.**
+    - [ ] Add users.
+    - [ ] Add groups.
+    - [ ] Change ownership to metastore admins.
+    - [ ] Activate SSO.
+- [ ] Data Governance Strategy.
+- [ ] Access your data.
+- [ ] Build the first pipeline.
+- [ ] Automation and orchestration.
+- [ ] Query and explore.
+- [ ] Databricks AI/BI
+---
 
 In this section:
 

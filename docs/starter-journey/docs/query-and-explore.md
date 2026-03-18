@@ -7,7 +7,7 @@
 * Serve and explore your data with Databricks.
 :::
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [x] ~~Data Governance Strategy.~~

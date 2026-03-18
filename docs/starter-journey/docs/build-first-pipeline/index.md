@@ -10,7 +10,7 @@ import Admonition from '@theme/Admonition';
 * Create the first spark declarative pipeline on Databricks. 
 :::
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [x] ~~Data Governance Strategy.~~

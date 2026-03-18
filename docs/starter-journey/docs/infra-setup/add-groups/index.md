@@ -13,7 +13,7 @@ import Admonition from '@theme/Admonition';
 :::
 
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [ ] Infra setup.
     - [x] Create workspaces.
