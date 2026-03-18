@@ -7,13 +7,6 @@
 Orchestrate workflows using Databricks Asset Bundles (DABs).
 :::
 
-## DABs sample project
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/W8ucHwzwdhc"
-></iframe>
-
 ## Medallion Architecture on Unity Catalog using DABs
 
 :::note
