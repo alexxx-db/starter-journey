@@ -8,7 +8,7 @@ sidebar_label: Automation & Orchestration
 * Learn how to orchestrate end-to-end Databricks projects using Lakeflow Jobs.
 :::
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [x] ~~Data Governance Strategy.~~

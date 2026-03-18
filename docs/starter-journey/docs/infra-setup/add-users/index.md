@@ -9,7 +9,7 @@ sidebar_label: Add Users
 * Add and manage users in your Databricks account.
 :::
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [ ] Infra setup.
     - [x] Create workspaces.

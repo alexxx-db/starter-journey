@@ -10,7 +10,7 @@ sidebar_label: Data Governance Strategy
 * Don't skip these sections.
 :::
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [ ] **Data Governance Strategy.**

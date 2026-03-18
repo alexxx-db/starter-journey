@@ -9,7 +9,7 @@ sidebar_label: Databricks AI/BI
 Build dashboards, Genie spaces, and applications with Databricks AI/BI.
 :::
 
-## Task-list
+## Journey checklist
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [x] ~~Data Governance Strategy.~~
