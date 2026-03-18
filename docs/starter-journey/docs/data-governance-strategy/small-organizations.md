@@ -42,7 +42,7 @@ This is the official, high quality and reliable data. This is the only version o
 
 <img src={useBaseUrl('/img/ucblog-simple-schemas.jpg')} alt="description"/>
 
-### The Medallion Journey: From Raw to Gold
+### The Medallion Architecture: From Raw to Gold
 
 Databricks recommended structure for organizing projects. For a detailed explanation, check out the following blog post that explores this topic in depth:
     * [Modeling a Medallion Architecture on Unity Catalog for your Organizational Structure
