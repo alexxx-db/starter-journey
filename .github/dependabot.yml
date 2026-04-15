@@ -1,0 +1,16 @@
+# .github/dependabot.yml
+version: 2
+updates:
+  # 1. Update npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/docs/starter-journey"
+    schedule:
+      interval: "daily"
+    # Limit the number of open PRs to prevent spam
+    open-pull-requests-limit: 3
+
+  # 2. Update GitHub Actions versions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
