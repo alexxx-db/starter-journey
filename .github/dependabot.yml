@@ -1,16 +1,22 @@
 # .github/dependabot.yml
 version: 2
 updates:
-  # 1. Update npm dependencies
+  # 1. Update npm dependencies (minor and patch only)
   - package-ecosystem: "npm"
     directory: "/docs/starter-journey"
     schedule:
       interval: "yearly"
-    # Limit the number of open PRs to prevent spam
     open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
-  # 2. Update GitHub Actions versions
+  # 2. Update GitHub Actions versions (minor and patch only)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "yearly"
+    open-pull-requests-limit: 3
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]

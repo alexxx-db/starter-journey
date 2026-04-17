@@ -29,4 +29,4 @@ jobs:
         run: npm ci
 
       - name: Test build website
-        run: npm run build
+        run: npx docusaurus build
