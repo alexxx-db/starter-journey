@@ -14,7 +14,7 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // Set the production url of your site here
+  // Set the production url of your site here.
   url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/starter-journey/',
