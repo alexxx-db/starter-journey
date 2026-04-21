@@ -156,7 +156,6 @@ const sidebars: SidebarsConfig = {
       items: [
         'build-first-pipeline/ui-databricks-agent',
         'build-first-pipeline/dabs',
-        'build-first-pipeline/mcp-skills',
       ],
     },
     {
