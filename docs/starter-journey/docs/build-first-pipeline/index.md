@@ -65,11 +65,10 @@ Read these before writing your first pipeline:
 
 ## Create the first pipeline
 
-Three paths to build your first pipeline — pick the one that matches your workflow:
+Two paths to build your first pipeline — pick the one that matches your workflow:
 
 - **[UI + Genie Code](/docs/build-first-pipeline/ui-databricks-agent)** — Build a pipeline interactively using the Databricks UI and Genie Code.
 - **[DABs](/docs/build-first-pipeline/dabs)** — Deploy a complete medallion pipeline as code using Databricks Asset Bundles.
-- **[MCP skills](/docs/build-first-pipeline/mcp-skills)** — Build a pipeline using MCP skills (coming soon).
 
 ## Next
 

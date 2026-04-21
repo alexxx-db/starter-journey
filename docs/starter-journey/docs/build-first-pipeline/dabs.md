@@ -50,6 +50,5 @@ The GitHub repository is ready to clone and deploy:
 
 ## Next
 
-- **Do next:** [MCP skills](/docs/build-first-pipeline/mcp-skills)
 - **Learn why:** [Spark Declarative Pipelines overview](/docs/build-first-pipeline)
 - **Reference:** [Databricks Asset Bundles — Databricks docs](https://docs.databricks.com/aws/en/dev-tools/bundles/)
