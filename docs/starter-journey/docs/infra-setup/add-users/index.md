@@ -1,31 +1,43 @@
 ---
 sidebar_position: 0
 sidebar_label: Add Users
+description: Add and manage users in your Databricks account — manually or via SCIM provisioning.
 ---
 
 # Add Users
 
-:::info
-* Add and manage users in your Databricks account.
-:::
+> **You'll register** users in the Databricks account so they can access workspaces in ~5 min.
+>
+> **Prereqs:** [Create Workspaces](/docs/infra-setup/create-workspaces)
+
+## Why this matters
+
+Workspaces exist, but nobody can use them until users are registered at the account level. Users created here propagate to any workspace they are assigned to. Skipping centralized user management leads to duplicated identities and inconsistent permissions.
+
+## How it works
+
+Databricks supports two approaches:
+
+- **Manual** — add users one at a time through the account console UI. Good for initial setup or small teams.
+- **SCIM** — sync users automatically from your identity provider (Entra ID, Okta, OneLogin). Required for organizations with more than a handful of users.
 
 ## Journey checklist
+
 - [x] ~~Identify target cloud tenant(s).~~
-- [ ] Infra setup.
+- [ ] Infra setup
     - [x] Create workspaces.
     - [ ] **Add users.**
     - [ ] Add groups.
     - [ ] Change ownership to metastore admins.
     - [ ] Activate SSO.
-- [ ] Data Governance Strategy.
-- [ ] Access your data.
-- [ ] Build the first pipeline.
-- [ ] Automation and orchestration.
-- [ ] Query and explore.
-- [ ] Databricks AI/BI
----
 
-In this section:
+## Choose your path
 
-- **[Manual](/docs/infra-setup/add-users/manual)** – Add users through the UI
-- **[SCIM](/docs/infra-setup/add-users/scim)** – Automate user provisioning with SCIM
+- **[Manual](/docs/infra-setup/add-users/manual)** — Add users through the account console UI.
+- **[SCIM](/docs/infra-setup/add-users/scim)** — Automate user provisioning from your identity provider.
+
+## Next
+
+- **Do next:** [Add Users — Manual](/docs/infra-setup/add-users/manual)
+- **Learn why:** [Account Console foundations](/docs/before-you-start/foundations/account-console)
+- **Reference:** [Manage users in your account](https://docs.databricks.com/aws/en/admin/users-groups/)

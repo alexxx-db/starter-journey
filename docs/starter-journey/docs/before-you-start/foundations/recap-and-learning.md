@@ -1,53 +1,59 @@
 ---
+sidebar_label: Recap and learning
+description: Quick-check questions to confirm you understand the account console, workspaces, and Unity Catalog before moving on.
 ---
 
 # Recap and learning
 
+> **You'll verify** your understanding of the three core Databricks concepts in ~3 min.
+>
+> **Prereqs:** [Account Console](/docs/before-you-start/foundations/account-console), [Workspace](/docs/before-you-start/foundations/workspace), [Unity Catalog](/docs/before-you-start/foundations/unity-catalog)
+
+## Why this matters
+
+The infrastructure setup section assumes you know these concepts. Gaps here surface later as misconfigured workspaces, broken permissions, or ungoverned data paths. Use the questions below to check yourself before moving on.
+
+## Account Console
+
+**What is it?**
+A central admin portal — similar to the AWS console or Azure portal — where you manage workspaces, Unity Catalog metastores, users, groups, service principals, billing, SCIM, and SSO.
+
+**When do you use it?**
+When provisioning or deleting workspaces, setting up identity, assigning metastores, or reviewing billing. Day-to-day data work happens inside a workspace, not here.
+
 ## Workspace
-:::info What is a Workspace?
-A workspace is the environment where you create and integrate Databricks products to build end-to-end Data + AI solutions.
-:::
 
-:::info How many workspaces do I need?
-* The best practice is 3 separated workspaces aligned with the Software Development Lifecycle (SDLC).
-    * Development workspace.
-    * Staging - UAT - Testing workspace.
-    * Production workspace.
-:::
+**What is it?**
+A cloud-based environment scoped to a region where teams run notebooks, jobs, SQL queries, dashboards, and ML experiments.
 
-:::info Do I need a new workspace for each team in my organization?
-* No, just add groups either as users or admins to a specific Workspace.
-* Discussed in more detail on section 6.
-:::
+**How many do I need?**
+Start with three: development, staging, and production. This follows the standard software development lifecycle. You do not need one workspace per team — use groups and permissions instead.
 
-:::info How can I isolate my organization data?
-* The physical and logical isolation is achieved through **Unity Catalog** (next section).
-:::
+**How do I isolate data between workspaces?**
+You don't — at least not at the workspace level. Data isolation is handled by Unity Catalog grants. A workspace can access any data its attached metastore governs, subject to the permissions you define.
 
 ## Unity Catalog
-:::info What is UC?
-Unity Catalog is a centralized metadata layer designed to manage data access, security, lineage, and governance across Databricks workspaces, enabling unified data management and secure collaboration.
+
+**What is it?**
+The centralized governance layer that manages permissions, lineage, and discovery for all data and AI assets across workspaces.
+
+**Where is the data stored?**
+In your cloud account's object storage. Unity Catalog governs access — it does not store or move your data.
+
+**How should every data and AI interaction be done?**
+Through Unity Catalog. Every read, write, and execution should flow through UC so that grants, lineage, and audit logs are enforced.
+
+**What should be avoided?**
+
+:::danger
+- Accessing data with hardcoded credentials in notebooks or scripts.
+- Configuring data access at the cluster level using external libraries and environment variables.
+
+Both approaches bypass UC governance, making access invisible to lineage and impossible to audit or revoke centrally.
 :::
 
-:::info Where is the data stored?
-The data, metadata and AI models are always stored in your cloud-object storage.
-:::
+## Next
 
-:::info How should every data+AI interaction be done?
-Through Unity Catalog.
-:::
-
-:::danger What should be avoided?
-- Accessing data using hardcoded credentials.
-- Configure data access on the clusters using external libraries + environment variables.
-:::
-
-## Databricks Account Console
-:::info What is the purpose of the Databricks Account Console?
-A portal similar to your cloud provider console / UI, here you can manage:
-  * Workspaces.
-  * UC Metastores.
-  * Users, Groups and Service Principals.
-  * Billing and Budgets.
-  * SCIM and SSO.
-:::
+- **Do next:** [Cloud Tenant ready](/docs/before-you-start/cloud-tenant-ready)
+- **Learn why:** [Unity Catalog](/docs/before-you-start/foundations/unity-catalog)
+- **Reference:** [Databricks administration overview](https://docs.databricks.com/aws/en/admin/)

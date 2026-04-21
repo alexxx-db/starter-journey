@@ -1,59 +1,92 @@
 ---
+sidebar_label: UC assets ownership
+description: Transfer ownership of existing Unity Catalog assets to the metastore admin group.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Admonition from '@theme/Admonition';
 
-# UC assets ownership
+# UC Assets Ownership
 
-:::info
-* Change Unity Catalog assets ownership to follow the best practices mentioned on the groups section.
-* Change the ownership of the existing assets to the `Metastore Admins` | `Unity Admins` group.
-:::
+> **You'll transfer** ownership of existing UC assets (external locations, credentials, connections, catalogs) to the admin group in ~10 min.
+>
+> **Prereqs:** [Set admin group](/docs/infra-setup/metastore-admins/set-admin-group)
 
-## Step-by-step guide for external locations - storage credentials - connections.
+## What you'll build
 
-* Check the screenshots.
-* On the workspace left panel, click on **Catalog**.
-* Click on ⚙️ and go to External Locations.
-* For each tab (External Locations, Credentials, Connections, External Metadata), change the owner of all assets to `Metastore Admins` | `Unity Admins` group.
-    * Click on the asset.
-    * On the far right, click the ✏️ edit button next to the owners name.
-    * There is going to be at most 3 storage locations and external locations.
-        * **Note:** If the External Locations or Credentials tab is empty, probably you don't belong to the metastore Admins group. 
+All existing Unity Catalog assets owned by the metastore admin group instead of individual users. This aligns with the governance model where the admin group controls infrastructure-level assets and project teams own their schemas.
 
-### Screenshots
+## Prerequisites
+
+- Membership in the metastore admin group.
+- Access to a workspace attached to the metastore.
+
+## Steps
+
+### 1. Transfer external locations, credentials, and connections
+
+1. In the workspace left panel, click **Catalog**.
+2. Click the gear icon (⚙️) to open **External Locations**.
+3. For each tab — **External Locations**, **Credentials**, **Connections**, **External Metadata** — change the owner of every asset to the admin group:
+    - Click the asset.
+    - On the far right, click the edit icon (✏️) next to the owner name.
+    - Set the owner to `Metastore Admins` or `Unity Admins`.
+
 :::warning
-    * Access external locations, storage credentials, and connections by clicking the wheel icon (⚙️).
-    * The first screenshot is going to be updated soon.
+If the External Locations or Credentials tab appears empty, you are likely not a member of the metastore admin group. Verify your group membership before proceeding.
 :::
-<img src={useBaseUrl('/img/uc-owners-1.jpg')} alt="description"/>
-<img src={useBaseUrl('/img/uc-owners-2.jpg')} alt="description"/>
-<img src={useBaseUrl('/img/uc-owners-3.jpg')} alt="description"/>
 
-## Step-by-step guide for catalogs.
+<img src={useBaseUrl('/img/uc-owners-1.jpg')} alt="Navigate to external locations via the gear icon"/>
+<img src={useBaseUrl('/img/uc-owners-2.jpg')} alt="External location owner transfer"/>
+<img src={useBaseUrl('/img/uc-owners-3.jpg')} alt="Storage credential owner transfer"/>
 
-* On the workspace left panel, click on **Catalog**.
-* For each catalog **that is not the system catalog**:
-    * Click the catalog.
-    * On the overview tab, search for the **About this catalog** section to find the Owner.
-    * Click the ✏️ icon to change the owner to `Metastore Admins` | `Unity Admins` group.
+### 2. Transfer catalog ownership
 
-## What about the schemas owner?
-* In Databricks, we use Schemas (aka Databases) to hold all the Unity Catalog assets (tables, views, models, etc..) for a specific project.
+1. In the workspace left panel, click **Catalog**.
+2. For each catalog **except the `system` catalog**:
+    - Click the catalog.
+    - In the **About this catalog** section, find the **Owner** field.
+    - Click the edit icon (✏️) and set the owner to the admin group.
 
-* **The Rule of Ownership:** If a specific group is in charge of a project, that group should own the folder (Schema) too.
-    * i.e `data-engineers` group owns the project `c360` therefore they must be the owners of `c360_bronze`, `c360_silver` and `c360_gold` schemas.
+<img src={useBaseUrl('/img/uc-owners-4.jpg')} alt="Catalog owner transfer"/>
 
-The governance best practices would be covered on **[4. Data Governance Strategy](/docs/data-governance-strategy/)**.
+### 3. Schema ownership (different rule)
 
+Schemas follow a different ownership rule. The group responsible for a project should own that project's schemas.
 
-### Screenshots
-<img src={useBaseUrl('/img/uc-owners-4.jpg')} alt="description"/>
+Example: if `data-engineers` owns the `c360` project, they should own `c360_bronze`, `c360_silver`, and `c360_gold` schemas.
 
-## Expected results
+Governance best practices for schema-level ownership are covered in **[Data Governance Strategy](/docs/data-governance-strategy/)**.
 
-### For all external locs - storage creds - connections
-<img src={useBaseUrl('/img/uc-ss-output-1.jpg')} alt="description"/>
+## Verify
 
-### For catalogs and schemas
-<img src={useBaseUrl('/img/uc-ss-output-2.jpg')} alt="description"/>
+### External locations, credentials, and connections
+
+Confirm every asset shows the admin group as the owner:
+
+<img src={useBaseUrl('/img/uc-ss-output-1.jpg')} alt="Expected output: external locations owned by admin group"/>
+
+### Catalogs and schemas
+
+Confirm each catalog shows the admin group as the owner:
+
+<img src={useBaseUrl('/img/uc-ss-output-2.jpg')} alt="Expected output: catalogs owned by admin group"/>
+
+## Troubleshoot
+
+<details>
+<summary>Cannot see external locations or credentials</summary>
+
+You must be a member of the metastore admin group to view these assets. Ask a current metastore admin to add you, or check your group membership in the account console.
+</details>
+
+<details>
+<summary>Cannot change ownership of a catalog</summary>
+
+Only the current owner or a metastore admin can transfer catalog ownership. If the current owner is a user who no longer has access, a metastore admin can reassign ownership from the account console.
+</details>
+
+## Next
+
+- **Do next:** [Activate SSO](/docs/infra-setup/activate-sso)
+- **Learn why:** [Unity Catalog foundations](/docs/before-you-start/foundations/unity-catalog)
+- **Reference:** [Manage privileges in Unity Catalog](https://docs.databricks.com/aws/en/data-governance/unity-catalog/manage-privileges/)

@@ -1,33 +1,42 @@
 ---
 sidebar_position: 0
 sidebar_label: Foundations
+description: Core Databricks concepts — account console, workspaces, and Unity Catalog — needed before infrastructure deployment.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Admonition from '@theme/Admonition';
 
 # Foundations
 
+> **You'll learn** the three building blocks of every Databricks deployment in ~15 min.
+>
+> **Prereqs:** none
+
+## Why this matters
+
+Every Databricks deployment rests on three concepts: the account console, workspaces, and Unity Catalog. Misunderstanding any of them causes problems that are expensive to fix after resources are already running.
+
 ## Databricks Cheatsheet 2026
 
-* Don't miss this outstanding resource before getting started.
-* Don't miss this outstanding resource before getting started.
-* Don't miss this outstanding resource before getting started.
+All team members contributing to the project should review this reference before proceeding. It covers the full Databricks product surface in a single document.
 
-:::info Databricks Cheatsheet 2026
-All team members contributing to the development and delivery of the Databricks project must review this enablement document.
-
-:::danger PDF HERE
-* <a target="_blank" href={useBaseUrl('/pdfs/Databricks-Cheatsheet-2026-Ready.pdf')}>**View PDF - Databricks Cheatsheet 2026**</a>
+:::warning
+Every contributor on the project must read this cheatsheet before starting infrastructure work.
 :::
 
-## Databricks core
-Prior to deploying the required cloud and Databricks infrastructure, ensure you are familiar with the following key concepts:
+<a target="_blank" href={useBaseUrl('/pdfs/Databricks-Cheatsheet-2026-Ready.pdf')}>**PDF — Databricks Cheatsheet 2026**</a>
 
+## Databricks core concepts
 
-In this section:
+Work through these pages in order. Each one builds on the previous.
 
-- **[Account Console](/docs/before-you-start/foundations/account-console)** – Learn about the Databricks account console
-- **[Workspace](/docs/before-you-start/foundations/workspace)** – Understand workspaces
-- **[Unity Catalog](/docs/before-you-start/foundations/unity-catalog)** – Unified governance and discovery
-- **[Recap and learning](/docs/before-you-start/foundations/recap-and-learning)** – Summary and next steps
+- **[Account Console](/docs/before-you-start/foundations/account-console)** — The central admin portal where you manage workspaces, users, and billing.
+- **[Workspace](/docs/before-you-start/foundations/workspace)** — The environment where teams build and run data + AI workloads.
+- **[Unity Catalog](/docs/before-you-start/foundations/unity-catalog)** — The governance layer for all data and AI assets.
+- **[Recap and learning](/docs/before-you-start/foundations/recap-and-learning)** — Quick-check questions to verify you understood the core concepts.
 
+## Next
+
+- **Do next:** [Account Console](/docs/before-you-start/foundations/account-console)
+- **Learn why:** [Cloud Tenant ready](/docs/before-you-start/cloud-tenant-ready)
+- **Reference:** [Databricks administration overview](https://docs.databricks.com/aws/en/admin/)

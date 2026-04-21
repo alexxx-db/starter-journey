@@ -1,72 +1,90 @@
 ---
+sidebar_label: Create connection
+description: Create a managed connection in Unity Catalog to register an external data source.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Admonition from '@theme/Admonition';
 
-# Create connection
+# Create Connection
 
-:::info
-Create a managed connection to external data sources.
+> **You'll create** a Unity Catalog connection to an external data source in ~10 min.
+>
+> **Prereqs:** [Managed connectors overview](/docs/access-your-data/managed-connectors), network connectivity between Databricks and the target system
+
+## What you'll build
+
+A Unity Catalog connection object that stores credentials and connectivity details for an external system. This connection is the foundation for both query federation (foreign catalogs) and ingestion pipelines (Lakeflow Connect).
+
+## Prerequisites
+
+- A Databricks workspace with metastore-admin or account-admin privileges.
+- Network connectivity from the Databricks VPC/VNet to the external system. This may require:
+  - [AWS — VPC peering](https://docs.databricks.com/aws/en/security/network/classic/vpc-peering)
+  - [Azure — VNet peering](https://learn.microsoft.com/en-us/azure/databricks/security/network/classic/vnet-peering)
+  - [GCP — VPC peering](https://docs.cloud.google.com/vpc/docs/vpc-peering)
+- Credentials for the external system (username/password, service account, or OAuth).
+
+## Steps
+
+### 1. Open the connections page
+
+1. In the Databricks workspace, click **Catalog** in the left sidebar.
+2. Click **External Data**, then click the gear icon (⚙️) to access the connections section.
+
+:::warning
+Access connections through the gear icon (⚙️), not the External Locations tab.
 :::
 
-The two purposes of Unity Catalog connection is to:
-1. Create a foreign catalog to push-down queries from Databricks.
-    * For use cases where just a small subset of the external data source is required.
-2. Create a managed ingestion pipeline into Unity Catalog using **Lakeflow Connect**.
-    * For use cases that require continuous CDC ingestion from the external data source into Databricks.
+<div style={{textAlign: 'left'}}>
+  <img src={useBaseUrl('/img/aws/aws_external_data_buttom.png')} alt="External Data button" style={{width: '80%', height: 'auto'}} />
+</div>
 
-## Create Connection
-<br />
+3. Click **Connections**.
+
+<div style={{textAlign: 'left'}}>
+  <img src={useBaseUrl('/img/aws/addconnectionbuttom.png')} alt="Add connection button" style={{width: '80%', height: 'auto'}} />
+</div>
+
+### 2. Configure the connection
+
+1. Enter a **connection name** — descriptive enough to identify the source system.
+2. Select the **connection type** (PostgreSQL, MySQL, SQL Server, Snowflake, etc.). See [supported connectors](https://docs.databricks.com/aws/en/query-federation/) for the full list.
+3. Enter the authentication details for the external system.
+
+### 3. Test and create
+
+1. Click **Test Connection** to verify connectivity.
+2. Once the test passes, click **Create**.
+
+### 4. Video walkthrough (optional)
+
 <iframe
   width="560"
   height="315"
   src="https://www.youtube.com/embed/fjxjK-jvRng"
 ></iframe>
 
+## Verify
 
-## Step-by-step tutorial 
+1. In the Databricks workspace, navigate to **Catalog** > **External Data** > gear icon (⚙️) > **Connections**.
+2. Click the new connection and confirm its status shows as active.
 
-1. Navigate to the Databricks workspace
+## Troubleshoot
 
-2. In the left sidebar, click on "Catalog" and then click on "External Data" 
+<details>
+<summary>Test Connection fails with a timeout</summary>
 
-:::warning
-* Click on the ⚙️ icon to access connections.
-* The screenshot needs an update.
-:::
+The Databricks VPC/VNet cannot reach the external system. Verify VPC peering, security group rules, and firewall settings. For on-premises systems, a VPN or dedicated network connection may be required.
+</details>
 
-<div style={{textAlign: 'left'}}>
-  <img src={useBaseUrl('/img/aws/aws_external_data_buttom.png')} 
-  alt="external data button"
-  style={{width: '80%', height: 'auto'}}
-  />
-</div>
-<br />
+<details>
+<summary>Test Connection fails with authentication error</summary>
 
-3. Click on "Connections"
-<div style={{textAlign: 'left'}}>
-  <img src={useBaseUrl('/img/aws/addconnectionbuttom.png')} 
-  alt="add connection button"
-  style={{width: '80%', height: 'auto'}}
-  />
-</div>
-<br />
+Verify the credentials entered match the external system. Check that the database user has the necessary permissions (at minimum, read access on the target schemas).
+</details>
 
+## Next
 
-4. **Configure your connection:**
-   - **Connection name**: Enter a descriptive name for your data source connection
-   - **Connection type**: Select the appropriate connector for your external system (e.g., PostgreSQL, MySQL, SQL Server, Snowflake, etc.)
-   - **Supported connections**: [Databricks Lakehouse Federation documentation](https://docs.databricks.com/aws/en/query-federation/).
-
-5. **Configure network connectivity:**
-    - Ensure your external data source is network connectivity from the Databricks VPC / VNet is set.
-    - Configure appropriate security groups, VPC settings, or firewall rules.
-    - For on-premises systems, you may need VPN or dedicated network connections.
-    - Resources:
-        - [AWS - VPC peering](https://docs.databricks.com/aws/en/security/network/classic/vpc-peering).
-        - [Azure - VNet peering](https://learn.microsoft.com/en-us/azure/databricks/security/network/classic/vnet-peering).
-        - [GCP - VPC peering](https://docs.cloud.google.com/vpc/docs/vpc-peering).
-   
-6. **Test and create the connection:**
-   - Click **Test Connection** to verify connectivity
-   - Once successful, click **Create** to save your external data connection
+- **Do next:** [Query federation](/docs/access-your-data/managed-connectors/create-connection/query-federation)
+- **Learn why:** [Unity Catalog foundations](/docs/before-you-start/foundations/unity-catalog)
+- **Reference:** [Lakehouse Federation — Databricks docs](https://docs.databricks.com/aws/en/query-federation/)

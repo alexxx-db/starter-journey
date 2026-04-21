@@ -1,24 +1,41 @@
 ---
+sidebar_label: Terraform (Azure)
+description: Deploy a Databricks workspace on Azure with VNet injection using Terraform.
 ---
 
-# Azure – Terraform
+# Azure — Terraform
 
-:::info
-Create a Databricks workspace on Azure using Terraform.
-:::
+> **You'll deploy** a Databricks workspace with VNet injection on Azure using Terraform in ~20 min.
+>
+> **Prereqs:** [Azure subscription](/docs/before-you-start/cloud-tenant-ready), [Terraform CLI](https://developer.hashicorp.com/terraform/install), [Databricks account console](/docs/before-you-start/foundations/account-console)
 
-## Workspace deployment
+## What you'll build
 
-* [Github | Azure VNet injection Workspace Setup Guide (with VNet deployment)
-](https://github.com/databricks-solutions/technical-services-solutions/tree/main/workspace-setup/terraform-examples/azure/azure-vnet-injection)
-* Follow the **README.md**.
-* Use the **tf/terraform.tfvars.example** file as a reference!
-  * Repeat for **staging** and **production** workspaces.
+A Databricks workspace deployed into your Azure subscription with VNet injection. The Terraform template handles the managed resource group, VNet, subnets, NSG rules, and workspace configuration.
 
-## Youtube tutorial
+## Prerequisites
+
+- An Azure subscription with Contributor permissions.
+- A Databricks account with account-admin privileges.
+- Terraform CLI installed locally.
+- Azure CLI authenticated (`az login`).
+
+## Steps
+
+### 1. Deploy the workspace
+
+1. Go to the template repository: [Azure VNet Injection Workspace Setup Guide](https://github.com/databricks-solutions/technical-services-solutions/tree/main/workspace-setup/terraform-examples/azure/azure-vnet-injection).
+2. Follow the **README.md** instructions.
+3. Copy `tf/terraform.tfvars.example` and fill in your values — subscription ID, resource group, region, and workspace name.
+4. Run `terraform init && terraform apply`.
+5. Repeat for **staging** and **production** workspaces.
+
+### 2. Video walkthrough (optional)
+
+The video below is a good reference but uses an older version of the template. The steps are similar.
 
 :::warning
-* The video is a great reference but it uses a deprecated and old version of the template.
+The video references a deprecated version of the Terraform template. Use the repository linked in Step 1 for the current version.
 :::
 
 <iframe
@@ -27,3 +44,29 @@ Create a Databricks workspace on Azure using Terraform.
   src="https://www.youtube.com/embed/jVMgw0_Z3h8"
   title="YouTube video player"
 ></iframe>
+
+## Verify
+
+1. Log in to the [Databricks account console](https://accounts.azuredatabricks.net/).
+2. Navigate to **Workspaces** and confirm the new workspace shows a **Running** status.
+3. In the Azure portal, verify the managed resource group was created with the expected VNet and NSG resources.
+
+## Troubleshoot
+
+<details>
+<summary>Terraform apply fails with permission errors</summary>
+
+Confirm the Azure CLI is authenticated with a principal that has Contributor access on the target subscription. Run `az account show` to verify the active subscription.
+</details>
+
+<details>
+<summary>VNet injection fails with subnet errors</summary>
+
+The subnets must be delegated to `Microsoft.Databricks/workspaces` and must not overlap with existing address spaces. Check the template's subnet CIDR values against your existing network layout.
+</details>
+
+## Next
+
+- **Do next:** [Add Users](/docs/infra-setup/add-users)
+- **Learn why:** [Unity Catalog foundations](/docs/before-you-start/foundations/unity-catalog)
+- **Reference:** [Databricks Terraform provider](https://registry.terraform.io/providers/databricks/databricks/latest/docs)

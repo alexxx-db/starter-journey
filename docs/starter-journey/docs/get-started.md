@@ -1,35 +1,38 @@
 ---
 sidebar_position: 1
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Admonition from '@theme/Admonition';
 
 # 1. Get Started
 
-Welcome to **Starter Journey**: Your roadmap to master Databricks.
+Welcome to **Starter Journey** — your roadmap to master Databricks.
 
 ## All about data
 
-Databricks Projects share the same foundation:
-* **BI & Analytics:** Require ***reliable data*** to transform raw information into the "single source of truth" necessary for confident, data-driven business decisions.
-* **Predictive AI & ML:** Demand ***high-quality data*** to ensure that training and validation processes result in models that are both accurate and performant.
-* **GenAI & Agents:** Depend on ***curated data*** to anchor Large Language Models (LLMs) in facts, ensuring chatbots provide trustable, hallucination-free answers.
+Every data + AI project — dashboards, ML models, GenAI agents — depends on the same thing: data that is accessible, governed, and reliable. Get the data foundation wrong and everything built on top of it breaks. Dashboards mislead. Models underperform. Agents hallucinate.
 
-One of the main goals of the Starter Journey is to establish a solid Databricks foundations for your upcoming Databricks projects.
+The three major workload families on Databricks make this concrete:
 
-## What's in this guide
+- **BI & Analytics** — requires **reliable data**. Accurate, complete, and served through a governed pipeline so reports reflect reality.
+- **Predictive AI & ML** — requires **high-quality data**. Deduplicated, correctly typed, and versioned so models train on facts and experiments are reproducible.
+- **GenAI & Agents** — requires **curated data**. Structured, up to date, and indexed so LLMs stay grounded instead of filling gaps with fiction.
 
-The Starter Journey covers the following topics:
+All three run on the same platform, governed by the same catalog, and read from the same tables. The foundation is identical — what changes is the workload on top.
 
-- **Infra Setup** – Workspaces, users, groups, SSO
-- **Data Governance** – Strategy for small and large organizations
-- **Access your data** – Object storage, managed connectors
-- **Build the first pipeline** – First pipeline
-- **Automation & Orchestration** – Jobs and workflows
-- **Query and explore** – Data serving and exploration
-- **Databricks AI/BI** – Dashboards, Genie, Apps
-- **DevOps and CI/CD** – Asset Bundles and best practices
-- **Cost Monitoring** – Industry best practices
-- **AI / ML** – Traditional ML, AgentBricks, MLOps, LLMOps
+The Starter Journey is a reference guide that connects the dots between Databricks documentation, cloud setup, and governance decisions. It gives you the shortest path to a working MVP: the minimum set of steps, in the right order, with links to the official docs where details live. No filler, no tangents — just what you need to go from an empty account to a production-ready environment.
 
-Use the sidebar to navigate through each section.
+## What you'll build
+
+The Starter Journey is a step-by-step guide that takes you from an empty Databricks account to a production-ready environment. Each section builds on the previous one:
+
+| # | Section | What you'll have when done |
+|---|---|---|
+| 2 | **[Before you start](/docs/before-you-start)** | A clear understanding of workspaces, Unity Catalog, and your cloud tenant model |
+| 3 | **[Infra setup](/docs/infra-setup)** | Workspaces provisioned, users and groups added, SSO activated |
+| 4 | **[Data governance strategy](/docs/data-governance-strategy)** | A catalog/schema structure that fits your organization's size |
+| 5 | **[Access your data](/docs/access-your-data)** | Cloud storage connected, external systems accessible via managed connectors |
+| 6 | **[Build the first pipeline](/docs/build-first-pipeline)** | A working medallion pipeline (bronze → silver → gold) |
+| 7 | **[Automation & orchestration](/docs/orchestration)** | The pipeline running on a schedule with retries and notifications |
+| 8 | **[Query and explore](/docs/query-and-explore)** | Interactive SQL queries running against your lakehouse data |
+| 9 | **[Databricks AI/BI](/docs/databricks-aibi)** | Dashboards, Genie Spaces, and apps surfacing data to business users |
+
+Use the sidebar to navigate through each section in order, or jump directly to the topic you need.

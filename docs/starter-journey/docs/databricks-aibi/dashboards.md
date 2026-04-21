@@ -1,23 +1,54 @@
 ---
+sidebar_label: Dashboards
+description: Create, share, and embed AI/BI dashboards that visualize lakehouse data with governed access.
 ---
 
 # Dashboards
 
-:::info
-Build and share dashboards with Databricks AI/BI.
-:::
+> **You'll learn** how to create and share Databricks AI/BI dashboards in ~10 min.
+>
+> **Prereqs:** [Databricks AI/BI](/docs/databricks-aibi)
 
-## Create the first dashboard
+## Why this matters
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/mEmnp1B6PUU"
-></iframe>
+Dashboards are the most common way stakeholders consume data. Databricks AI/BI dashboards query Unity Catalog tables directly — no data extracts, no stale copies. Row- and column-level security from Unity Catalog applies automatically, so every viewer sees only the data they are authorized to access.
 
-## Embed your dashboards
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/hr-1N_QBobQ"
-></iframe>
+## How it works
+
+A dashboard is a collection of visualizations (charts, tables, counters) backed by SQL queries. You build them in a drag-and-drop editor, add filters and parameters, and publish to share with your team. Dashboards can run on a schedule to keep cached results fresh.
+
+### Create the first dashboard
+
+This video walks through building a dashboard from scratch:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mEmnp1B6PUU"></iframe>
+
+### Embed dashboards in external applications
+
+Dashboards can be embedded in internal portals, wikis, or custom apps using iframe embedding. This extends their reach beyond the Databricks workspace.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hr-1N_QBobQ"></iframe>
+
+## When to use / when not to
+
+**Use dashboards when:**
+
+- Stakeholders need a visual, regularly refreshed view of key metrics.
+- You want governance (row/column security) to carry through to the presentation layer.
+- The audience is comfortable with a standard reporting experience (charts, tables, filters).
+
+**Use Genie Spaces instead when:**
+
+- Users want to ask ad-hoc questions rather than browse a fixed set of charts.
+- The questions change frequently and a static dashboard would require constant rebuilding.
+
+## Common pitfalls
+
+- **Too many queries on one dashboard** — each visualization runs its own query. A dashboard with 20+ charts can be slow to load. Group related metrics and split large dashboards into focused pages.
+- **Not scheduling refreshes** — by default, dashboards query live data on every page load. For stable reporting, schedule periodic refreshes so viewers hit cached results instead of queuing warehouse compute on every visit.
+
+## Next
+
+- **Do next:** [Genie Spaces](/docs/databricks-aibi/genie-spaces)
+- **Learn why:** [Databricks AI/BI overview](/docs/databricks-aibi)
+- **Reference:** [AI/BI Dashboards — Databricks docs](https://docs.databricks.com/aws/en/dashboards/index.html)

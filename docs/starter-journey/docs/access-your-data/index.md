@@ -1,15 +1,21 @@
 ---
 sidebar_position: 0
 sidebar_label: Access your data
+description: Connect Databricks to your data sources — cloud object storage and external systems via managed connectors.
 ---
 
-# Access your data
+# Access Your Data
 
-:::info
-* Connect to and ingest data from various sources into Databricks.
-:::
+> **You'll connect** Databricks to your organization's data sources in this section.
+>
+> **Prereqs:** [Data Governance Strategy](/docs/data-governance-strategy)
+
+## Why this matters
+
+Workspaces, users, groups, and governance are configured. But Databricks cannot process data it cannot reach. This section covers the two paths for connecting to data: direct access to cloud object storage and managed connectors for external systems like databases and SaaS platforms.
 
 ## Journey checklist
+
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [x] ~~Data Governance Strategy.~~
@@ -17,11 +23,21 @@ sidebar_label: Access your data
 - [ ] Build the first pipeline.
 - [ ] Automation and orchestration.
 - [ ] Query and explore.
-- [ ] Databricks AI/BI
----
+- [ ] Databricks AI/BI.
 
+## How it works
 
-In this section:
+Databricks accesses external data through Unity Catalog. Every connection — whether to an S3 bucket or a PostgreSQL database — is registered as a UC object with its own permissions and audit trail.
 
-- **[Cloud object storage](/docs/access-your-data/cloud-object-storage)** – Connect to data in **AWS - S3**, **Azure - ADLS**, and **GCP - GCS**
-- **[Managed connectors](/docs/access-your-data/managed-connectors)** – Create connections, query federation, and ingestion pipelines
+Two categories cover the most common scenarios:
+
+| Category | Use when |
+|---|---|
+| [Cloud object storage](/docs/access-your-data/cloud-object-storage) | Your data lives in S3, ADLS, or GCS and you need Databricks to read/write it directly |
+| [Managed connectors](/docs/access-your-data/managed-connectors) | You need to query or ingest data from external databases, SaaS platforms, or other systems |
+
+## Next
+
+- **Do next:** [Cloud object storage](/docs/access-your-data/cloud-object-storage)
+- **Learn why:** [Unity Catalog foundations](/docs/before-you-start/foundations/unity-catalog)
+- **Reference:** [Connect to data sources — Databricks docs](https://docs.databricks.com/aws/en/connect/)
