@@ -1,118 +1,123 @@
 ---
+sidebar_label: Small organizations
+description: A straightforward governance model with three catalogs, medallion schemas, and group-based grants for small data teams.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Admonition from '@theme/Admonition';
 
-# Small organizations
+# Small Organizations
 
-:::info
-Data governance strategy for small organizations.
+> **You'll understand** how to structure catalogs, schemas, and permissions for a small data team in ~10 min.
+>
+> **Prereqs:** [Data Governance Strategy](/docs/data-governance-strategy)
+
+## Why this matters
+
+A small team still needs clear boundaries between development and production data. Without them, an experimental query can corrupt a table that feeds executive dashboards. The model below gives you environment isolation, a consistent schema structure, and least-privilege access — without the overhead of business-unit prefixes.
+
+## Mental model
+
+Three catalogs map 1:1 to your three workspaces. Inside each catalog, schemas follow the medallion architecture (bronze, silver, gold) per project. Groups control who can read, write, or own each schema.
+
+## How it works
+
+### Catalogs
+
+<img src={useBaseUrl('/img/ucblog-simple-catalogs.jpg')} alt="Three catalogs: development, staging, production"/>
+
+:::tip
+Add a `sandbox` catalog for ad-hoc exploration and demos that should not interfere with any project schema.
 :::
 
-## Catalogs
+**Development** — the playground where teams build and experiment. All data teams have access. Mistakes here are expected and do not affect production. Bound to the development workspace.
 
-:::note
-* `sandbox` catalog can be also added for more demos and exploration.
-:::
+**Staging** — the final checkpoint before production. Developers push finished work here for integration testing. DevOps or QA teams validate the output. Bound to the staging workspace.
 
-<img src={useBaseUrl('/img/ucblog-simple-catalogs.jpg')} alt="description"/>
+**Production** — the official, high-quality data. Business users consume dashboards and reports from this catalog. Modifications happen exclusively through automation and service principals — no manual writes. Bound to the production workspace.
 
-### Development
-Playground where your team builds and experiments. It’s the place to try out new ideas and write new code.
-* **Who’s allowed in:** All data teams.
-* **The Goal:** To give creators a safe space to break things, fix them, and learn without affecting the rest of the company.
-* **Bound to**: Development workspace.
+### Schemas — the medallion architecture
 
-### Staging
-This is the final checkpoint. Once a project is finished in the "Lab," it moves here to be tested against real-world scenarios to ensure everything is perfect.
-* **Who’s allowed in:** Developers (to test) and DevOps / Quality Testers (to approve).
-* **The Goal:** To catch any last-minute "bugs" or mistakes before the data is shown to the bosses.
-* **Bound to**: Staging workspace.
+Each project gets three schemas that reflect the data refinement stages: bronze, silver, and gold.
 
-### Production
-This is the official, high quality and reliable data. This is the only version of the data that the leadership team uses for their daily reports and dashboards.
-* **Who’s allowed in:** Production assets are restricted to view-only access for Business Users, with modifications managed exclusively via Automation and Service Principals.
-* **The Goal:** To provide a 100% reliable and secure environment where the data is always accurate and "live."
-* **Bound to**: Production workspace.
+<img src={useBaseUrl('/img/ucblog-simple-schemas.jpg')} alt="Medallion schemas: bronze, silver, gold per project"/>
 
----
+For a detailed explanation of this pattern, see [Modeling a Medallion Architecture on Unity Catalog](https://blog.databricksforstartups.com/part-1-modeling-a-medallion-architecture-on-unity-catalog-for-your-organizational-structure-b8f0f9918c26).
 
+#### Bronze
 
-## Schemas
+Raw data from external sources, ingested as-is. Nothing is edited, filtered, or deduplicated at this layer.
 
-<img src={useBaseUrl('/img/ucblog-simple-schemas.jpg')} alt="description"/>
+- **Naming:** `[project]_bronze`
+- **Purpose:** Historical record of source data. If a downstream transformation breaks, you reprocess from bronze instead of re-extracting from the source.
+- **Typical objects:** Streaming tables reading from cloud object storage, tables created by Lakeflow ingestion pipelines.
 
-### The Medallion Architecture: From Raw to Gold
+#### Silver
 
-Databricks recommended structure for organizing projects. For a detailed explanation, check out the following blog post that explores this topic in depth:
-    * [Modeling a Medallion Architecture on Unity Catalog for your Organizational Structure
-](https://blog.databricksforstartups.com/part-1-modeling-a-medallion-architecture-on-unity-catalog-for-your-organizational-structure-b8f0f9918c26).
+Cleaned and conformed data. Bronze records are deduplicated, data types are standardized, and related tables are joined into a coherent model.
 
-### Bronze Layer 🥉
+- **Naming:** `[project]_silver`
+- **Purpose:** Single source of truth for analysts running ad-hoc queries. Data here is reliable and consistently formatted.
+- **Typical objects:** Streaming tables with transformations from bronze, standard tables with batch transformations.
 
-The Bronze layer contains raw data from the landing zone. When data is ingested into Databricks from external sources, it lands here first. This data is a "carbon copy" of the original—nothing has been edited, filtered, or fixed yet.
+#### Gold
 
-* **Naming Pattern:** [PROJECT_NAME]_bronze
-* **Purpose:** To act as a historical record. If a mistake happens later in the process, we can always come back here to re-process the original data without needing to go back to the source.
+Business-level aggregates and metrics built on top of silver. Structured to answer specific questions — total sales by region, monthly active users, churn rates.
 
-:::note Unity Catalog terms
-* Contains:
-    * Streaming tables: Reads raw data from cloud object storage.
-    * Tables created by a Lakeflow ingestion pipeline.
-* More on sections 5. and 6.
-:::
----
+- **Naming:** `[project]_gold`
+- **Purpose:** Powers dashboards, executive reports, and BI tools. Optimized for query speed and clarity, not raw detail.
+- **Typical objects:** Materialized views, metric views, summary tables.
 
-### Silver Layer 🥈 
-
-In the Silver layer, the data is refined. We transform the raw Bronze data by fixing typos, removing duplicate rows, and ensuring dates and currencies are in the correct format. This is where we join different tables together to create a clearer picture.
-
-* **Naming Pattern:** [PROJECT_NAME]_silver
-* **Purpose:** To provide a "Single Source of Truth." This is the data that analysts use for ad-hoc queries because it is predictable and high-quality.
-
-:::note Unity Catalog terms
-* Contains:
-    * Streaming tables: streaming transformations from bronze layer streaming tables.
-    * Tables: transformations from bronze layer tables.
-* More on sections 5. and 6.
-:::
-
----
-
-### Gold Layer 🥇 
-
-The Gold layer is the final product. Data here is aggregated and structured to answer specific business questions, such as "What were the total sales by region?" or "What is our monthly active user count?"
-
-* **Naming Pattern:** [PROJECT_NAME]_gold
-* **Purpose:** To power official company dashboards and executive reports. It is optimized for speed and clarity rather than raw detail.
-
-:::note Unity Catalog terms
-* Contains:
-    * Materialized views.
-    * Metric views.
-    * Tables.
-* More on sections 5. and 6.
-:::
-
----
-
-## Permissions and Grants
+### Permissions and grants
 
 <div style={{ textAlign: 'center', marginTop: 24, marginBottom: 8 }}>
   <img
     src={useBaseUrl('/img/ucblog-simple-grants.jpg')}
-    alt="Diagram showing Databricks user groups and their permissions"
+    alt="Group permissions across medallion schemas"
     style={{width: '100%' }}
   />
   <div style={{ fontSize: 16, color: '#777', marginTop: 8 }}>
-    Example: customer 360 view project.
+    Example: Customer 360 project with group-based grants at the schema level.
   </div>
 </div>
 
-* **The Rule of Ownership:** If a specific group (like the `Marketing-DEs`) is in charge of a project, that group should the schemas.
-* **Sharing is caring:** If another team needs to see a specific table or UC asset, the owners simply grant them the correct level of access. 
-    *  The permissions should be provided at the schema level for better management.
-        * ***Data Reader*** permissions.
-        * ***Data Editor*** permissions.
-* **The Benefit:** This keeps the data safe because it means only the people who actually need the information can get to it.
-* **The Goal:** To ensure that access is given "as needed" rather than leaving the door wide open for everyone.
+The rules are straightforward:
+
+**Ownership** — the group responsible for a project owns that project's schemas. If `marketing-data-engineers` builds the C360 pipeline, they own `c360_bronze`, `c360_silver`, and `c360_gold`.
+
+**Sharing** — when another team needs access, the owners grant it at the schema level:
+- **Data Reader** — read-only access to all tables in the schema.
+- **Data Editor** — read and write access.
+
+Grant at the schema level, not per table. Per-table grants do not scale and are easy to forget when new tables are added.
+
+**Least privilege** — only grant the access a team actually needs. Read-only for analysts, read-write for engineers working on the project, view-only for business users consuming dashboards.
+
+## When to use / when not to
+
+**Use this model when:**
+
+- You have one or two data teams.
+- All teams work within a single business unit or share the same data boundaries.
+- You want the simplest governance model that still enforces environment isolation and least-privilege access.
+
+**Consider the medium-large model when:**
+
+- Multiple business units need separate catalog namespaces.
+- Teams from different departments must not see each other's development data.
+- You need workspace-level or catalog-level prefixes for organizational clarity.
+
+## Common pitfalls
+
+### Granting permissions on individual tables
+
+Per-table grants are tedious and brittle. New tables do not inherit them. Always grant at the schema level so new objects automatically pick up the correct permissions.
+
+### Manual writes to production
+
+Production data should only be modified by automated pipelines running as service principals. If a human can write directly to production, a fat-finger query can break a dashboard the CEO checks every morning.
+
+## Next
+
+- **Do next:** [Medium-large organizations](/docs/data-governance-strategy/medium-large-organizations)
+- **Learn why:** [Unity Catalog foundations](/docs/before-you-start/foundations/unity-catalog)
+- **Reference:** [Unity Catalog best practices](https://docs.databricks.com/aws/en/data-governance/unity-catalog/best-practices.html)

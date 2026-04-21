@@ -1,16 +1,23 @@
 ---
 sidebar_position: 0
 sidebar_label: Data Governance Strategy
+description: Define how your organization structures catalogs, schemas, and permissions in Unity Catalog.
 ---
 
 # Data Governance Strategy
 
-:::info
-* Define your organization data governance strategy on Unity Catalog.
-* Don't skip these sections.
-:::
+> **You'll define** your organization's catalog, schema, and permission model on Unity Catalog in ~15 min.
+>
+> **Prereqs:** [Infra Setup](/docs/infra-setup) (workspaces, users, groups, and metastore admin configured)
+
+## Why this matters
+
+Workspaces are running and users have access. The next decision — how you structure catalogs, schemas, and grants — determines whether teams can find, trust, and safely share data. A poorly designed governance model leads to permission creep, duplicated tables, and no clear ownership. Fixing it after hundreds of tables exist is painful.
+
+This section covers two patterns. Pick the one that matches your organization size.
 
 ## Journey checklist
+
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [ ] **Data Governance Strategy.**
@@ -18,10 +25,33 @@ sidebar_label: Data Governance Strategy
 - [ ] Build the first pipeline.
 - [ ] Automation and orchestration.
 - [ ] Query and explore.
-- [ ] Databricks AI/BI
----
+- [ ] Databricks AI/BI.
 
-In this section:
+## How it works
 
-- **[Small organizations](/docs/data-governance-strategy/small-organizations)** – Simple and effective for smaller data teams.
-- **[Medium and large organizations](/docs/data-governance-strategy/medium-large-organizations)** – Governance at scale for multiple data teams.
+Unity Catalog organizes data into a three-level namespace: **catalog > schema > object**. Your governance strategy defines how you map that hierarchy to your organization's teams, environments, and projects.
+
+Two patterns cover most organizations:
+
+| Pattern | Best for |
+|---|---|
+| [Small organizations](/docs/data-governance-strategy/small-organizations) | One or two data teams, a single business unit, fewer moving parts |
+| [Medium-large organizations](/docs/data-governance-strategy/medium-large-organizations) | Multiple business units, teams with different data boundaries, stricter isolation requirements |
+
+Both patterns use the same building blocks (catalogs per environment, medallion schemas, group-based grants). The difference is how many layers of prefixing and isolation you add.
+
+## Common pitfalls
+
+### Skipping governance entirely
+
+Teams that jump straight to building pipelines without defining catalog and schema structure end up with ad-hoc tables scattered across default catalogs. Retroactively organizing them requires rewriting every reference.
+
+### Over-engineering for a small team
+
+A five-person team does not need business-unit prefixed catalogs. Start with the small-organization pattern. You can add prefixes and split catalogs later if the team grows.
+
+## Next
+
+- **Do next:** [Small organizations](/docs/data-governance-strategy/small-organizations)
+- **Learn why:** [Unity Catalog foundations](/docs/before-you-start/foundations/unity-catalog)
+- **Reference:** [Unity Catalog best practices](https://docs.databricks.com/aws/en/data-governance/unity-catalog/best-practices.html)
