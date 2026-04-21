@@ -96,9 +96,6 @@ Goal: the reader can now make an informed decision.
 ## Common pitfalls
 <each pitfall = 1 short subsection>
 
-## Key terms
-<glossary — 3-6 definitions max>
-
 ## Next
 (shared closer)
 ```
@@ -118,6 +115,37 @@ Today admonitions are used for summary, guide, best practice, lessons, danger �
 | `:::danger` | Irreversible / security-impacting / costs-money action |
 
 No `:::info`, no `:::success`, no `:::note`. Everything else is just prose or a numbered step.
+
+---
+
+## Writing voice
+
+### Match tone to template
+
+- **Technical pages** use direct, imperative language. Tell the reader exactly what to do. No motivation, no backstory — commands, expected output, done.
+- **Educational pages** explain the *why* in concrete terms. Tie every concept to a real engineering or business problem. Skip the hand-waving.
+
+### Keep sentences short
+
+- One idea per sentence. If a sentence has a comma and a conjunction, split it.
+- Paragraphs stay under 4 sentences. If you need more, add a subheading.
+- Prefer active voice: "UC checks grants" not "grants are checked by UC."
+
+### No AI slop
+
+Every sentence must carry information the reader didn't already have. Cut filler ruthlessly.
+
+| Ban | Why |
+|---|---|
+| "In today's data-driven world…" | Empty opener. Start with the actual point. |
+| "It's important to note that…" | If it's important, just say it. |
+| "This powerful feature enables…" | "Powerful" is marketing. Describe what it does. |
+| "Seamlessly / effortlessly / robust" | Adjectives that add zero information. |
+| "Let's dive in" / "Let's explore" | Filler. Delete and start the section. |
+| "As mentioned above / below" | Link to the section or remove the reference. |
+| Repeating the heading in the first sentence | The reader just read the heading. |
+
+**Rule of thumb:** read the sentence out loud. If it sounds like a press release or a chatbot, rewrite it. If you can delete it and the page still makes sense, delete it.
 
 ---
 

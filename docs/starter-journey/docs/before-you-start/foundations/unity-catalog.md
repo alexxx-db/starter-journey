@@ -1,71 +1,90 @@
 ---
+sidebar_label: Unity Catalog
+description: Understand what Unity Catalog is, how it governs data and AI assets, and when to use it.
 ---
 
 # Unity Catalog
 
-:::info
-Unity Catalog (UC) provides a centralized governance solution for managing data and AI assets across Databricks environments.
+> **You'll understand** how Unity Catalog centralizes governance for data and AI in ~5 min.
+>
+> **Prereqs:** [Workspace](/docs/before-you-start/foundations/workspace)
 
-More information on:
-- [Databricks Unity Catalog](https://www.databricks.com/product/unity-catalog)
-- [What is Unity Catalog?](https://docs.databricks.com/aws/en/data-governance/unity-catalog/)
-:::
+## Why this matters
 
+Without a central governance layer, teams end up with fragmented access controls spread across workspaces, hardcoded credentials buried in notebooks, and zero visibility into how data flows between systems. Unity Catalog (UC) solves this by providing a single place to manage permissions, lineage, and discovery for every data and AI asset in your Databricks environment.
 
-## UC sits between your workspaces and data lake.
+## Mental model
 
-![Unity Catalog Access](/img/uc-top-level.jpg)
+UC sits between your workspaces and your data lake. Workspaces connect to a shared **metastore**, and every interaction with data, models, or functions is routed through UC so that permissions, lineage, and audit logs are enforced automatically.
 
-## UC objects and the three namespace convention
+![Unity Catalog sits between workspaces and the data lake](/img/uc-top-level.jpg)
 
-![Unity Catalog Access](/img/uc-objects.png)
+Your data, metadata, and AI models always remain in your organization's cloud account. UC never moves data out—it only governs access to it.
 
-```sql 
---- catalog: first namespace.
---- schema: second namespace.
---- table / view / volume / model: third namespace
-SELECT * from my_catalog.my_schema.my_table;
+## How it works
 
---- Example: Select the gold table sales from the galaxy project on the development catalog.
-SELECT * from dev.galaxy_gold.sales;
+### The three-level namespace
 
--- Set a default catalog or schema
+Every asset in UC is addressed as **catalog.schema.object**. This convention keeps names unique across the entire organization and makes it easy to separate environments (dev vs. prod) or teams.
+
+![Unity Catalog objects and namespaces](/img/uc-objects.png)
+
+```sql
+-- catalog.schema.table
+SELECT * FROM my_catalog.my_schema.my_table;
+
+-- Example: select the gold table "sales" from the galaxy project in the dev catalog
+SELECT * FROM dev.galaxy_gold.sales;
+
+-- Set defaults to shorten queries
 USE CATALOG dev;
 USE SCHEMA galaxy_gold;
-
---- Uses the defined catalog and schema
 SELECT * FROM sales;
-
 ```
-## UC Governs All Data, ML, and GenAI Interactions
 
-When a user or service principal performs any of the following actions:
-* Use an **UC object**.
-* Creates an **UC object**.
-* Populates a **UC object** (catalogs, tables, schemas).
-* Deletes an **UC object**.
-* Queries a **UC object** (query, view, table).
-* Runs an **UC object** (function, model).
+### Governance of all interactions
 
-UC verifies the associated grants and permissions, as illustrated in the following diagram:
+Whenever a user or service principal creates, reads, updates, deletes, or runs a UC object—whether it is a table, view, volume, function, or model—UC checks the associated grants before allowing the operation.
 
-![Unity Catalog and Federation](/img/uc-and-federation.png)
+![Unity Catalog governance and federation](/img/uc-and-federation.png)
 
-## Lessons learned
+This means every data and AI interaction should flow through UC. If it does, you get fine-grained access control, full lineage, and a complete audit trail for free.
 
-:::info What is Unity Catalog?
-Is the centralized governance layer designed to manage data access, security, lineage, and governance across Databricks workspaces, enabling unified data management and secure collaboration.
-:::
+## When to use / when not to
 
-:::info Where is the data stored?
-The data, metadata and AI models are always stored in your organization cloud account.
-:::
+**Use UC when:**
 
-:::info How should every data+AI interaction be done?
-Through UC.
-:::
+- You need a single permission model across multiple workspaces.
+- You want automatic lineage tracking for tables, views, and ML models.
+- You need to share data or AI assets across teams without duplicating them.
+- You want centralized audit logs for compliance or security reviews.
 
-:::danger What should be avoided?
-- Accessing data, models or GenAI agents using hardcoded credentials.
-- Configure data access on the clusters using external libraries + environment variables.
-:::
+**Not the right tool when:**
+
+- You are running a quick local experiment that doesn't touch shared data—but even then, defaulting to UC avoids credential sprawl.
+
+## Common pitfalls
+
+### Hardcoded credentials
+
+Bypassing UC with connection strings or secrets embedded in notebooks defeats every governance guarantee. If a credential is hardcoded, UC can't audit or revoke access.
+
+### Cluster-level data access via environment variables
+
+Configuring data access at the cluster level using external libraries and environment variables is another way to sidestep UC. It creates hidden dependencies that are invisible to lineage and impossible to audit.
+
+## Key terms
+
+| Term | Definition |
+|---|---|
+| **Unity Catalog** | The centralized governance layer that manages permissions, lineage, and discovery for all data and AI assets across Databricks workspaces. |
+| **Metastore** | The top-level container for UC metadata. Each Databricks account region has one metastore shared by all workspaces in that region. |
+| **Catalog** | The first level of the three-level namespace. Typically maps to an environment (dev, staging, prod) or a business domain. |
+| **Schema** | The second level of the namespace, grouping related tables, views, volumes, and functions within a catalog. |
+| **Grants** | Permissions assigned to principals (users, groups, service principals) that control what operations they can perform on UC objects. |
+
+## Next
+
+- **Do next:** [Create your first workspace on AWS](/docs/infra-setup/create-workspaces/aws/manual)
+- **Learn why:** [Workspace foundations](/docs/before-you-start/foundations/workspace)
+- **Reference:** [What is Unity Catalog? — Databricks docs](https://docs.databricks.com/aws/en/data-governance/unity-catalog/)

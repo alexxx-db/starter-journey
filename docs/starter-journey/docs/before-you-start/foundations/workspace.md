@@ -1,31 +1,79 @@
 ---
+sidebar_label: Workspace
+description: A Databricks workspace is the cloud environment where teams build, run, and govern data and AI workloads.
 ---
 
 # Workspace
 
-:::info
-Understand Databricks workspaces and how they fit into your setup.
+> **You'll understand** what a Databricks workspace is, what lives inside it, and how many you need in ~5 min.
+>
+> **Prereqs:** [Account Console](/docs/before-you-start/foundations/account-console)
+
+## Why this matters
+
+A workspace is where all the actual work happens — notebooks, jobs, dashboards, SQL queries, ML experiments. Choosing the wrong number of workspaces or misunderstanding their boundaries leads to permission sprawl, environment contamination, or unnecessary cost.
+
+## Mental model
+
+A workspace is a cloud-based environment tied to a single region in your cloud account. It groups compute, storage references, code, and user permissions into one boundary. Multiple workspaces share identity and governance through the account console and Unity Catalog.
+
+![Workspace organization](/img/workspace-organization.png)
+
+## How it works
+
+### What lives inside a workspace
+
+Each workspace contains:
+
+- **Notebooks and repos** — code authoring and version control.
+- **Jobs** — scheduled or automatic orchestration (DAGs).
+- **Pipelines** - ingestion and transformation pipelines.
+- **Clusters and SQL warehouses** — compute for engineering, analytics, and ML.
+- **Dashboards** — visualizations and BI artifacts.
+- **ML experiments and models** — tracked via MLflow.
+
+For the full list of workspace objects and their access controls, see:
+
+- [Workspace assets](https://docs.databricks.com/aws/en/workspace/workspace-assets)
+- [Access control lists](https://docs.databricks.com/aws/en/security/auth/access-control)
+
+### How many workspaces do you need
+
+Start with three, aligned to the software development lifecycle:
+
+1. **Development** — where engineers iterate on code and test changes.
+2. **Staging** — integration testing and user acceptance before production.
+3. **Production** — stable workloads serving the business.
+
+You do not need a separate workspace per team or business unit. Add teams to an existing workspace as groups with the appropriate permissions.
+
+:::tip
+If required, every team or business unit can have a dedicated workspace and catalog.
 :::
 
-A Databricks workspace is a **cloud-based environment** where users organize and work with notebooks, jobs, dashboards, data, and compute resources in one place. Its main purpose is to give teams a secure, collaborative hub for building, running, and governing data engineering, analytics, and AI workloads, often with separate workspaces for dev, test, and production.
+### Data isolation
 
-![Workspace Organization](/img/workspace-organization.png)
+Workspaces alone do not isolate data. Physical and logical data isolation is handled by **Unity Catalog**, covered in the next section. A workspace can access any data its attached metastore governs, subject to grants.
 
-## What assets can be created in a Workspace?
+## Common pitfalls
 
-- [Databricks Workspace Objects](https://docs.databricks.com/aws/en/workspace/workspace-assets)
-- [Access Control List for Databricks Workspace Objects](https://docs.databricks.com/aws/en/security/auth/access-control).
+### One workspace for everything
 
-## Lessons learned
+Running dev and production workloads in the same workspace means an untested job can impact production pipelines. The dev/staging/prod split costs little and prevents a lot of incidents.
 
-:::info What is a Workspace?
-A Databricks workspace is a cloud-based environment where users access and organize all their Databricks assets—like notebooks, clusters, jobs, and dashboards for collaboration on data and AI tasks.
-:::
+### One workspace per team
 
-:::info Recommended number of workspaces
-* An initial setup of three workspaces (dev, staging and prod) is recommended.
-:::
+Over-splitting creates admin overhead and makes cross-team collaboration harder. Add teams as groups to shared workspaces unless there is a hard compliance reason to separate.
 
-:::info How can I isolate my organization data?
-* The physical and logical isolation is achieved through **Unity Catalog** (next section).
-:::
+## Key terms
+
+| Term | Definition |
+|---|---|
+| **Workspace** | A cloud-based Databricks environment scoped to a region, containing notebooks, jobs, compute, and dashboards. |
+| **Workspace admin** | A role with admin privileges scoped to a single workspace — manages users, clusters, and workspace settings. |
+
+## Next
+
+- **Do next:** [Unity Catalog](/docs/before-you-start/foundations/unity-catalog)
+- **Learn why:** [Account Console](/docs/before-you-start/foundations/account-console)
+- **Reference:** [Databricks workspace overview](https://docs.databricks.com/aws/en/workspace/)
