@@ -167,10 +167,9 @@ const sidebars: SidebarsConfig = {
       items: [
         'orchestration/ui',
         'orchestration/dabs',
-        'orchestration/mcp-skills',
       ],
     },
-    {type: 'doc', id: 'query-and-explore', label: '8. Query and explore'},
+    {type: 'doc', id: 'query-and-explore', label: '8. Query and Explore'},
     {
       type: 'category',
       label: '9. Databricks AI/BI',
@@ -180,41 +179,6 @@ const sidebars: SidebarsConfig = {
         'databricks-aibi/dashboards',
         'databricks-aibi/genie-spaces',
         'databricks-aibi/databricks-apps',
-      ],
-    },
-    {
-      type: 'category',
-      label: '10. DevOps and CI/CD',
-      collapsed: true,
-      link: {type: 'doc', id: 'devops-cicd/index'},
-      items: [
-        {
-          type: 'category',
-          label: 'Databricks Asset Bundles',
-          link: {type: 'doc', id: 'devops-cicd/databricks-asset-bundles/index'},
-          items: ['devops-cicd/databricks-asset-bundles/deploy-first-dabs'],
-        },
-        'devops-cicd/industry-best-practice',
-        'devops-cicd/e2e-project-as-repo',
-      ],
-    },
-    {
-      type: 'category',
-      label: '11. Cost Monitoring',
-      collapsed: true,
-      link: {type: 'doc', id: 'cost-monitoring/index'},
-      items: [],
-    },
-    {
-      type: 'category',
-      label: '12. AI / ML',
-      collapsed: true,
-      link: {type: 'doc', id: 'ai-ml/index'},
-      items: [
-        'ai-ml/traditional-ml',
-        'ai-ml/agentbricks',
-        'ai-ml/mlops',
-        'ai-ml/llmops',
       ],
     },
   ],

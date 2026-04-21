@@ -1,16 +1,20 @@
 ---
 sidebar_label: Build the first pipeline
+description: Build your first Spark Declarative Pipeline on Databricks using Lakeflow for ingestion, transformation, and orchestration.
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Admonition from '@theme/Admonition';
 
-# 6. Build the first pipeline
+# Build the First Pipeline
 
-:::info
-* Create the first spark declarative pipeline on Databricks. 
-:::
+> **You'll learn** how Lakeflow and Spark Declarative Pipelines work and build your first transformation pipeline in ~20 min.
+>
+> **Prereqs:** [Access your data](/docs/access-your-data)
+
+## Why this matters
+
+Data is connected, governance is in place, but raw data sitting in storage does not answer business questions. Pipelines transform raw ingested data into clean, reliable tables that analysts and dashboards can trust. Databricks uses Spark Declarative Pipelines (SDP) for this — you declare *what* you want the data to look like, and the engine handles *how* to get there incrementally.
 
 ## Journey checklist
+
 - [x] ~~Identify target cloud tenant(s).~~
 - [x] ~~Infra setup.~~
 - [x] ~~Data Governance Strategy.~~
@@ -18,74 +22,57 @@ import Admonition from '@theme/Admonition';
 - [ ] **Build the first pipeline.**
 - [ ] Automation and orchestration.
 - [ ] Query and explore.
-- [ ] Databricks AI/BI
----
+- [ ] Databricks AI/BI.
 
-## Data Engineering on Databricks
+## Data engineering on Databricks
+
+Databricks data engineering is built on three pillars. Each handles a different stage of the data lifecycle.
+
+| Pillar | Purpose | Where to learn more |
+|---|---|---|
+| **Lakeflow Connect** | Ingest data from external sources into UC tables | [Access your data — ingestion pipelines](/docs/access-your-data/managed-connectors/create-ingestion-pipeline/) |
+| **Spark Declarative Pipelines** | Transform raw data through bronze, silver, and gold layers | This section |
+| **Lakeflow Jobs** | Orchestrate pipelines, notebooks, and tasks on a schedule | [Automation and orchestration](/docs/orchestration) |
 
 ### Lakeflow introduction
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/n8XWOr6zIPo"
-></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n8XWOr6zIPo"></iframe>
 
 ### Lakeflow in action
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/alP9qqk5J64"
-></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/alP9qqk5J64"></iframe>
 
-### Lessons learned from the previous videos
+## How it works — Spark Declarative Pipelines
 
-:::tip For data ingestion 
-* Use Lakeflow Connect.
-    * [5. Access your data - Managed connectors - Create ingestion pipeline](/docs/access-your-data/managed-connectors/create-ingestion-pipeline/)
-:::
+SDP is the Databricks implementation of [Apache Spark Declarative Pipelines](https://spark.apache.org/docs/latest/declarative-pipelines-programming-guide.html). You write Python (PySpark) or SQL declarations, and the engine figures out the execution plan, dependency order, and incremental processing.
 
-:::tip For data transformation 
-* Use Spark Declarative Pipelines.
-    * [6. Build the first pipeline](/docs/build-first-pipeline/#spark-declarative-pipelines)
-:::
+Key capabilities:
 
-:::tip For orchestration 
-* Use Lakeflow Jobs.
-    * [7. Automation & Orchestration](/docs/orchestration)
-:::
+- **Multi-source processing** — stream from Kafka, batch-load from cloud storage, or query external databases in the same pipeline.
+- **Built-in incremental processing** — SDP tracks changes and processes only new or modified data, reducing compute cost and runtime.
+- **Declarative data quality** — define expectations (constraints and business rules) inline with transformations. Rows that fail expectations are quarantined or flagged automatically.
+- **Unity Catalog integration** — every table, view, and pipeline is governed by UC.
 
-## Spark Declarative Pipelines
-* [Apache Spark 4.1.1 Spark Declarative Pipelines (SDP) documentation](https://spark.apache.org/docs/latest/declarative-pipelines-programming-guide.html).
-* Python Pyspark and SQL support.
-* **Process multiple sources simultaneously** whether streaming from Kafka, batch loading from cloud storage, or querying external databases.
-* **Built-in incremental processing** intelligently tracks changes and processes only new or modified data, dramatically reducing compute costs and pipeline runtimes.
-* **Data quality is enforced through declarative expectations** that you define inline with your transformations.
-* Integrated with **Unity Catalog** (everything on Databricks is Unity Catalog).
+## SDP reference material
 
-## SDP Features
+Read these before writing your first pipeline:
 
-### Technical references before coding 🛡️
+- [Load data in pipelines](https://docs.databricks.com/aws/en/ldp/load) — includes [AutoLoader](https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/) for incremental ingestion from cloud object storage.
+- [Transform data with pipelines](https://docs.databricks.com/aws/en/ldp/transform) — when to use views, materialized views, and streaming tables.
+- [Manage data quality with expectations](https://docs.databricks.com/aws/en/ldp/expectations) — data quality constraints and business rules.
+- **Python:** [Python language reference](https://docs.databricks.com/aws/en/ldp/developer/python-ref) | [Develop SDP with Python](https://docs.databricks.com/aws/en/ldp/developer/python-dev)
+- **SQL:** [SQL language reference](https://docs.databricks.com/aws/en/ldp/developer/sql-ref) | [Develop SDP with SQL](https://docs.databricks.com/aws/en/ldp/developer/sql-dev)
 
-* [Load data in pipelines](https://docs.databricks.com/aws/en/ldp/load).
-    * [AutoLoader](https://docs.databricks.com/aws/en/ingestion/cloud-object-storage/auto-loader/) for incremental ingestions for data sitting in Cloud Object Storage.
-* [Transform data with pipelines
-](https://docs.databricks.com/aws/en/ldp/transform).
-    * When to use views, materialized views, and streaming tables!
-* [Manage data quality with pipeline expectations
-](https://docs.databricks.com/aws/en/ldp/expectations).
-    * Data quality constraint and business rules defined as expectations.
-* **Python**
-    * [Python language reference
-](https://docs.databricks.com/aws/en/ldp/developer/python-ref).
-    * [Develop SDP with Python
-](https://docs.databricks.com/aws/en/ldp/developer/python-dev).
-* **SQL**
-    * [SQL language reference](https://docs.databricks.com/aws/en/ldp/developer/sql-ref).
-    * [Develop SDP with SQL](https://docs.databricks.com/aws/en/ldp/developer/sql-dev).
+## Create the first pipeline
 
-## Create the first pipeline 🛠️
+Three paths to build your first pipeline — pick the one that matches your workflow:
 
-- **[UI + Databricks Agent](/docs/build-first-pipeline/ui-databricks-agent)** – Build a pipeline using the Databricks UI and Databricks Agent.
-- **[DABs](/docs/build-first-pipeline/dabs)** – Build a pipeline using Databricks Asset Bundles.
-- **[MCP skills](/docs/build-first-pipeline/mcp-skills)** – Build a pipeline using MCP skills.
+- **[UI + Genie Code](/docs/build-first-pipeline/ui-databricks-agent)** — Build a pipeline interactively using the Databricks UI and Genie Code.
+- **[DABs](/docs/build-first-pipeline/dabs)** — Deploy a complete medallion pipeline as code using Databricks Asset Bundles.
+- **[MCP skills](/docs/build-first-pipeline/mcp-skills)** — Build a pipeline using MCP skills (coming soon).
+
+## Next
+
+- **Do next:** [UI + Genie Code](/docs/build-first-pipeline/ui-databricks-agent)
+- **Learn why:** [Data Governance Strategy](/docs/data-governance-strategy)
+- **Reference:** [Spark Declarative Pipelines — Databricks docs](https://docs.databricks.com/aws/en/ldp/)
