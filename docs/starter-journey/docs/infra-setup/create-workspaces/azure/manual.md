@@ -35,7 +35,7 @@ Match the subscription and resource group to the environment. Deploying a dev wo
 <iframe
   width="560"
   height="315"
-  src="https://www.youtube.com/embed/tI6Pvjuo1RM"
+  src="https://www.youtube.com/embed/hb_cQ8d3750"
 ></iframe>
 
 ### 2. Repeat for staging and production
